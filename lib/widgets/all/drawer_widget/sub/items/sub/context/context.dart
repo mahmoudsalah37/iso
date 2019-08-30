@@ -2,16 +2,18 @@ import 'package:flutter_web/material.dart';
 import 'package:iso/models/page_model.dart';
 import 'package:iso/packages/font_size/auto_size_text.dart';
 import 'package:iso/packages/provider/src/provider.dart';
+import 'package:iso/styles/drawer_widget/items/style_item.dart';
 
-class Exclusions extends StatefulWidget {
-  Exclusions({Key key}) : super(key: key);
+import '../../../../../view_page.dart';
 
-  _ExclusionsState createState() => _ExclusionsState();
+class Context extends StatefulWidget {
+  Context({Key key}) : super(key: key);
+
+  _ContextState createState() => _ContextState();
 }
 
-class _ExclusionsState extends State<Exclusions> {
- bool show = false;
-  Color color = Colors.white;
+class _ContextState extends State<Context> {
+  bool show = false, isBlue0 = false, isBlue1 = false;
   @override
   Widget build(BuildContext context) {
     final page = Provider.of<PageModel>(context);
@@ -66,20 +68,16 @@ class _ExclusionsState extends State<Exclusions> {
                   padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
                   child: Text(
                     'Understanding of Organization context',
-                    style: TextStyle(color: color),
+                    style: TextStyle(color: isBlueItem(isBlue0)),
                     textAlign: TextAlign.left,
                   ),
                 ),
                 onHover: (bool onHover) {
-                  if (onHover) {
-                    color = Colors.blueAccent;
-                  } else {
-                    color = Colors.white;
-                  }
+                  isBlue0 = onHover;
                   setState(() {});
                 },
                 onTap: () {
-                 // page.setViewPage(ViewPage(1, 0));
+                  page.setViewPage(ViewPage(2, 0));
                 },
               ),
               //Interested Parties
@@ -88,20 +86,16 @@ class _ExclusionsState extends State<Exclusions> {
                   padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
                   child: Text(
                     'Interested Parties',
-                    style: TextStyle(color: color),
+                    style: TextStyle(color: isBlueItem(isBlue1)),
                     textAlign: TextAlign.left,
                   ),
                 ),
                 onHover: (bool onHover) {
-                  if (onHover) {
-                    color = Colors.blueAccent;
-                  } else {
-                    color = Colors.white;
-                  }
+                  isBlue1 = onHover;
                   setState(() {});
                 },
                 onTap: () {
-                 // page.setViewPage(ViewPage(1, 0));
+                  page.setViewPage(ViewPage(2, 1));
                 },
               ),
             ],

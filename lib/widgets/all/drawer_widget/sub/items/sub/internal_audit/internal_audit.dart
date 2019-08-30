@@ -1,6 +1,5 @@
 import 'package:flutter_web/material.dart';
 import 'package:iso/packages/font_size/auto_size_text.dart';
-import '../../../../../../../styles/drawer_widget/items/style_item.dart';
 
 class InternalAudit extends StatefulWidget {
   _InternalAuditState createState() => _InternalAuditState();
@@ -51,6 +50,7 @@ class _InternalAuditState extends State<InternalAudit> {
         ),
 
         //sub
+        //Dashboard
         Visibility(
           visible: show,
           child: Column(
@@ -77,7 +77,7 @@ class _InternalAuditState extends State<InternalAudit> {
                 child: Padding(
                   padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
                   child: Text(
-                    'Master INternal Audit Plan',
+                    'Auditors List',
                     style: TextStyle(color: Colors.white),
                     textAlign: TextAlign.left,
                   ),
@@ -93,7 +93,7 @@ class _InternalAuditState extends State<InternalAudit> {
                 child: Padding(
                   padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
                   child: Text(
-                    'Internal Audit Schedule',
+                    'Audit Plan',
                     style: TextStyle(color: Colors.white),
                     textAlign: TextAlign.left,
                   ),
@@ -109,7 +109,7 @@ class _InternalAuditState extends State<InternalAudit> {
                 child: Padding(
                   padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
                   child: Text(
-                    'Internal Audit Checklist Master',
+                    'Audit Report',
                     style: TextStyle(color: Colors.white),
                     textAlign: TextAlign.left,
                   ),

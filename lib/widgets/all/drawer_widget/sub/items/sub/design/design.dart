@@ -2,11 +2,11 @@ import 'package:flutter_web/material.dart';
 import 'package:iso/packages/font_size/auto_size_text.dart';
 import '../../../../../../../styles/drawer_widget/items/style_item.dart';
 
-class Operations extends StatefulWidget {
-  _OperationsState createState() => _OperationsState();
+class Design extends StatefulWidget {
+  _DesignState createState() => _DesignState();
 }
 
-class _OperationsState extends State<Operations> {
+class _DesignState extends State<Design> {
   bool show = false;
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class _OperationsState extends State<Operations> {
                 ),
                 Expanded(
                   child: AutoSizeText(
-                    'Operations',
+                    'Design',
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold),
                     minFontSize: 8.0,
@@ -58,23 +58,7 @@ class _OperationsState extends State<Operations> {
                 child: Padding(
                   padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
                   child: Text(
-                    'Dashboard',
-                    style: TextStyle(color: Colors.white),
-                    textAlign: TextAlign.left,
-                  ),
-                ),
-                onTap: () {
-                  setState(() {
-                    // ViewPage(0, 0);
-                  });
-                },
-              ),
-              
-              InkWell(
-                child: Padding(
-                  padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
-                  child: Text(
-                    'Raw Material',
+                    'Design Input',
                     style: TextStyle(color: Colors.white),
                     textAlign: TextAlign.left,
                   ),
@@ -89,7 +73,7 @@ class _OperationsState extends State<Operations> {
                 child: Padding(
                   padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
                   child: Text(
-                    'Work Order',
+                    'Design Control',
                     style: TextStyle(color: Colors.white),
                     textAlign: TextAlign.left,
                   ),
@@ -104,7 +88,7 @@ class _OperationsState extends State<Operations> {
                 child: Padding(
                   padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
                   child: Text(
-                    'Operation Planning',
+                    'Design Output',
                     style: TextStyle(color: Colors.white),
                     textAlign: TextAlign.left,
                   ),
@@ -119,7 +103,7 @@ class _OperationsState extends State<Operations> {
                 child: Padding(
                   padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
                   child: Text(
-                    'Process Validation',
+                    'Design Change',
                     style: TextStyle(color: Colors.white),
                     textAlign: TextAlign.left,
                   ),
@@ -130,82 +114,6 @@ class _OperationsState extends State<Operations> {
                   });
                 },
               ),
-              InkWell(
-                child: Padding(
-                  padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
-                  child: Text(
-                    'Execution Plan',
-                    style: TextStyle(color: Colors.white),
-                    textAlign: TextAlign.left,
-                  ),
-                ),
-                onTap: () {
-                  setState(() {
-                    // ViewPage(0, 0);
-                  });
-                },
-              ),
-              InkWell(
-                child: Padding(
-                  padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
-                  child: Text(
-                    'Produt Service Product',
-                    style: TextStyle(color: Colors.white),
-                    textAlign: TextAlign.left,
-                  ),
-                ),
-                onTap: () {
-                  setState(() {
-                    // ViewPage(0, 0);
-                  });
-                },
-              ),
-              InkWell(
-                child: Padding(
-                  padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
-                  child: Text(
-                    'Equipment',
-                    style: TextStyle(color: Colors.white),
-                    textAlign: TextAlign.left,
-                  ),
-                ),
-                onTap: () {
-                  setState(() {
-                    // ViewPage(0, 0);
-                  });
-                },
-              ),
-              InkWell(
-                child: Padding(
-                  padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
-                  child: Text(
-                    'Breaking Record',
-                    style: TextStyle(color: Colors.white),
-                    textAlign: TextAlign.left,
-                  ),
-                ),
-                onTap: () {
-                  setState(() {
-                    // ViewPage(0, 0);
-                  });
-                },
-              ),
-              InkWell(
-                child: Padding(
-                  padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
-                  child: Text(
-                    'KPI',
-                    style: TextStyle(color: Colors.white),
-                    textAlign: TextAlign.left,
-                  ),
-                ),
-                onTap: () {
-                  setState(() {
-                    // ViewPage(0, 0);
-                  });
-                },
-              ),
-              
             ],
           ),
         ),

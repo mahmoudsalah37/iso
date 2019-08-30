@@ -1,20 +1,19 @@
 import 'package:flutter_web/material.dart';
 import 'package:iso/models/page_model.dart';
 import 'package:iso/packages/font_size/auto_size_text.dart';
-import 'package:iso/packages/provider/provider.dart';
-import 'package:iso/styles/drawer_widget/items/style_item.dart';
-import '../../../../../view_page.dart';
+import 'package:iso/packages/provider/src/provider.dart';
 
-class DocumentedInforamation extends StatefulWidget {
-  _DocumentedInforamationState createState() => _DocumentedInforamationState();
+class CustomerFocus extends StatefulWidget {
+
+  _CustomerFocusState createState() => _CustomerFocusState();
 }
 
-class _DocumentedInforamationState extends State<DocumentedInforamation> {
-  bool show = false, isBlue0 = false, isBlue1 = false;
+class _CustomerFocusState extends State<CustomerFocus> {
+ bool show = false;
+  Color color = Colors.white;
   @override
   Widget build(BuildContext context) {
     final page = Provider.of<PageModel>(context);
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -28,11 +27,11 @@ class _DocumentedInforamationState extends State<DocumentedInforamation> {
                   child: SizedBox(
                       height: 20.0,
                       width: 20.0, // fixed width and height
-                      child: Image.asset('icons/document.png')),
+                      child: Image.asset('icons/dashboard.png')),
                 ),
                 Expanded(
                   child: AutoSizeText(
-                    'Document Informantion',
+                    'CustomerFocus',
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold),
                     minFontSize: 8.0,
@@ -52,6 +51,7 @@ class _DocumentedInforamationState extends State<DocumentedInforamation> {
             },
           ),
         ),
+
         //sub
         Visibility(
           visible: show,
@@ -65,37 +65,64 @@ class _DocumentedInforamationState extends State<DocumentedInforamation> {
                   padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
                   child: Text(
                     'Dashboard',
-                    style: TextStyle(color: isBlueItem(isBlue0)),
+                    style: TextStyle(color: color),
                     textAlign: TextAlign.left,
                   ),
                 ),
                 onHover: (bool onHover) {
-                  isBlue0 = onHover;
+                  if (onHover) {
+                    color = Colors.blueAccent;
+                  } else {
+                    color = Colors.white;
+                  }
                   setState(() {});
                 },
                 onTap: () {
-                  page.setViewPage(ViewPage(3, 0));
-                  setState(() {});
+                 // page.setViewPage(ViewPage(1, 0));
                 },
               ),
-              //Documented Information
+              //Customer  Feedback
               InkWell(
                 child: Padding(
                   padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
                   child: Text(
-                    'Documented Information',
-                    style: TextStyle(color: isBlueItem(isBlue1)),
+                    'Customer  Feedback',
+                    style: TextStyle(color: color),
                     textAlign: TextAlign.left,
                   ),
                 ),
                 onHover: (bool onHover) {
-                  isBlue1 = onHover;
+                  if (onHover) {
+                    color = Colors.blueAccent;
+                  } else {
+                    color = Colors.white;
+                  }
                   setState(() {});
                 },
                 onTap: () {
-                  page.setViewPage(ViewPage(3, 1));
-
+                 // page.setViewPage(ViewPage(1, 0));
+                },
+              ),
+              //Customer Complaints
+              InkWell(
+                child: Padding(
+                  padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
+                  child: Text(
+                    'Customer Complaints',
+                    style: TextStyle(color: color),
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+                onHover: (bool onHover) {
+                  if (onHover) {
+                    color = Colors.blueAccent;
+                  } else {
+                    color = Colors.white;
+                  }
                   setState(() {});
+                },
+                onTap: () {
+                 // page.setViewPage(ViewPage(1, 0));
                 },
               ),
             ],

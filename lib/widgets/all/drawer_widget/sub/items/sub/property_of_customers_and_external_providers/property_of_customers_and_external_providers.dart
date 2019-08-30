@@ -1,15 +1,19 @@
 import 'package:flutter_web/material.dart';
+import 'package:iso/models/page_model.dart';
 import 'package:iso/packages/font_size/auto_size_text.dart';
-import '../../../../../../../styles/drawer_widget/items/style_item.dart';
+import 'package:iso/packages/provider/src/provider.dart';
 
-class MRM extends StatefulWidget {
-  _MRMState createState() => _MRMState();
+class Property extends StatefulWidget {
+
+  _PropertyState createState() => _PropertyState();
 }
 
-class _MRMState extends State<MRM> {
-  bool show = false;
+class _PropertyState extends State<Property> {
+ bool show = false;
+  Color color = Colors.white;
   @override
   Widget build(BuildContext context) {
+    final page = Provider.of<PageModel>(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -23,11 +27,11 @@ class _MRMState extends State<MRM> {
                   child: SizedBox(
                       height: 20.0,
                       width: 20.0, // fixed width and height
-                      child: Image.asset('icons/transfer.png')),
+                      child: Image.asset('icons/dashboard.png')),
                 ),
                 Expanded(
                   child: AutoSizeText(
-                    'MRM',
+                    'property of customers and external providers',
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold),
                     minFontSize: 8.0,
@@ -55,49 +59,27 @@ class _MRMState extends State<MRM> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+        
+              //property of customers and external providers
               InkWell(
                 child: Padding(
                   padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
                   child: Text(
-                    'Dashboard',
-                    style: TextStyle(color: Colors.white),
+                    'property of customers and external providers',
+                    style: TextStyle(color: color),
                     textAlign: TextAlign.left,
                   ),
                 ),
-                onTap: () {
-                  setState(() {
-                    // ViewPage(0, 0);
-                  });
+                onHover: (bool onHover) {
+                  if (onHover) {
+                    color = Colors.blueAccent;
+                  } else {
+                    color = Colors.white;
+                  }
+                  setState(() {});
                 },
-              ),
-              InkWell(
-                child: Padding(
-                  padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
-                  child: Text(
-                    'MRM',
-                    style: TextStyle(color: Colors.white),
-                    textAlign: TextAlign.left,
-                  ),
-                ),
                 onTap: () {
-                  setState(() {
-                    // ViewPage(0, 0);
-                  });
-                },
-              ),
-              InkWell(
-                child: Padding(
-                  padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
-                  child: Text(
-                    'MRM Agendas',
-                    style: TextStyle(color: Colors.white),
-                    textAlign: TextAlign.left,
-                  ),
-                ),
-                onTap: () {
-                  setState(() {
-                    // ViewPage(0, 0);
-                  });
+                 // page.setViewPage(ViewPage(1, 0));
                 },
               ),
             ],

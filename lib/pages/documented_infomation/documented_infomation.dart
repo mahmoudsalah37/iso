@@ -1,12 +1,23 @@
 import 'package:flutter_web/material.dart';
+import 'sub/dashboard.dart';
+import 'sub/document_information.dart';
 
-class DocumentedInformationPage extends StatefulWidget {
-  _DocumentedInformationPageState createState() => _DocumentedInformationPageState();
+class DocumentedInformation extends StatefulWidget {
+  final int child;
+  DocumentedInformation(this.child);
+  _DocumentedInformationState createState() =>
+      _DocumentedInformationState();
 }
 
-class _DocumentedInformationPageState extends State<DocumentedInformationPage> {
+class _DocumentedInformationState extends State<DocumentedInformation> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return IndexedStack(
+      index: widget.child,
+      children: <Widget>[
+        DashboardPage(),
+        DocumentInformationPage(),
+      ],
+    );
   }
 }

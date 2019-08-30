@@ -1,12 +1,11 @@
 import 'package:flutter_web/material.dart';
 import 'package:iso/packages/font_size/auto_size_text.dart';
-import '../../../../../../../styles/drawer_widget/items/style_item.dart';
 
-class DesignAndDevelopent extends StatefulWidget {
-  _DesignAndDevelopentState createState() => _DesignAndDevelopentState();
+class Meeting extends StatefulWidget {
+  _MeetingState createState() => _MeetingState();
 }
 
-class _DesignAndDevelopentState extends State<DesignAndDevelopent> {
+class _MeetingState extends State<Meeting> {
   bool show = false;
   @override
   Widget build(BuildContext context) {
@@ -23,11 +22,11 @@ class _DesignAndDevelopentState extends State<DesignAndDevelopent> {
                   child: SizedBox(
                       height: 20.0,
                       width: 20.0, // fixed width and height
-                      child: Image.asset('icons/software.png')),
+                      child: Image.asset('icons/transfer.png')),
                 ),
                 Expanded(
                   child: AutoSizeText(
-                    'Design & Development',
+                    'Meeting',
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold),
                     minFontSize: 8.0,
@@ -47,7 +46,9 @@ class _DesignAndDevelopentState extends State<DesignAndDevelopent> {
             },
           ),
         ),
+
         //sub
+        //Dashboard
         Visibility(
           visible: show,
           child: Column(
@@ -69,11 +70,28 @@ class _DesignAndDevelopentState extends State<DesignAndDevelopent> {
                   });
                 },
               ),
+              //MRM
               InkWell(
                 child: Padding(
                   padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
                   child: Text(
-                    'Design & Development',
+                    'MRM',
+                    style: TextStyle(color: Colors.white),
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+                onTap: () {
+                  setState(() {
+                    // ViewPage(0, 0);
+                  });
+                },
+              ),
+              //Other Meeting
+              InkWell(
+                child: Padding(
+                  padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
+                  child: Text(
+                    'Other Meeting',
                     style: TextStyle(color: Colors.white),
                     textAlign: TextAlign.left,
                   ),

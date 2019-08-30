@@ -1,10 +1,12 @@
 import 'package:flutter_web/material.dart';
-import 'package:iso/pages/admin/admin.dart';
-import 'package:iso/pages/dashboard/dashboard.dart';
+import 'package:iso/pages/context/context.dart';
+import 'package:iso/pages/policy/policy.dart';
+import 'package:iso/pages/scope/scope.dart';
+import 'package:iso/pages/documented_infomation/documented_infomation.dart';
 
 class ViewPage extends StatefulWidget {
-  final int page, indexChild;
-  ViewPage(this.page, this.indexChild);
+  final int page, child;
+  ViewPage(this.page, this.child);
   _ViewPageState createState() => _ViewPageState();
 }
 
@@ -14,8 +16,10 @@ class _ViewPageState extends State<ViewPage> {
     return IndexedStack(
       index: widget.page,
       children: <Widget>[
-        DashboardPage(widget.indexChild),
-        AdminPage(widget.indexChild),
+        Policy(widget.child),
+        Scope(widget.child),
+        Context(widget.child),
+        DocumentedInformation(widget.child),
       ],
     );
   }
