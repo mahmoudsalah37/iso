@@ -3,7 +3,6 @@ import 'package:iso/models/page_model.dart';
 import 'package:iso/packages/provider/provider.dart';
 import '../../widgets/all/app_bar_widget.dart';
 import '../../widgets/all/drawer_widget/drawer_widget.dart';
-import '../../widgets/all/view_page.dart';
 
 class Home extends StatefulWidget {
   _HomeState createState() => _HomeState();

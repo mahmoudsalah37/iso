@@ -19,31 +19,29 @@ import 'sub/hr/hr.dart';
 import 'sub/purchase/purchase.dart';
 
 ListView items() {
-  return 
-     ListView(
-      shrinkWrap: true,
-      children: <Widget>[
-        Policy(),
-        Scope(),
-        Context(),
-        DocumentedInforamation(),
-        HR(),
-        Access(),
-        RiskManagment(),
-        ChangeManagement(),
-        Objectives(),
-        Comminucation(),
-        Purchase(),
-        Design(),
-        Property(),
-        InternalAudit(),
-        Meeting(),
-        Actions(),
-        Operations(),
-        CustomerFocus(),
-        SizedBox(
-          height: 50.0,
-        )
-      ],
+  return ListView(
+    shrinkWrap: true,
+    children: <Widget>[
+      SizedBox(height: 5.0),
+      Policy(),
+      Scope(),
+      Context(),
+      DocumentedInforamation(),
+      HR(),
+      Access(),
+      RiskManagment(),
+      ChangeManagement(),
+      Objectives(),
+      Comminucation(),
+      Purchase(),
+      Design(),
+      Property(),
+      InternalAudit(),
+      Meeting(),
+      Actions(),
+      Operations(),
+      CustomerFocus(),
+      SizedBox(height: 50.0)
+    ],
   );
 }

@@ -5,5 +5,5 @@ const double leftPaddingSubListItem = 23.0;
 const double heightContainerItem = 36.0;
 
 Color isBlueItem(bool isBlue) {
-  return isBlue ? Colors.blue : Colors.white;
+  return isBlue ? Color.fromRGBO(175,147,153, 1.0) : Colors.white;
 }

@@ -10,7 +10,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromRGBO(142, 68, 208, 1.0),
+      color: Color.fromRGBO(175,28,53, 1.0),
       child: items(),
     );
   }
