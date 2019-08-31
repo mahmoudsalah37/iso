@@ -33,7 +33,7 @@ class _GMSScopePageState extends State<GMSScopePage> {
                     child: SizedBox(
                         height: 20.0,
                         width: 20.0, // fixed width and height
-                        child: Image.asset('icons/search.png')),
+                        child: Image.asset('icons/se.png')),
                   ),
                 ),
               ],
