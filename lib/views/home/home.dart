@@ -23,13 +23,17 @@ class _HomeState extends State<Home> {
             ),
             Expanded(
               flex: 5,
-              child: page.getViewPage(),
+              child: Container(
+                color: Colors.grey[200],
+                child: Padding(
+                  padding: EdgeInsets.all(4.0),
+                  child: page.getViewPage(),
+                ),
+              ),
             )
           ],
         ),
       ),
     );
   }
-
-  
 }
