@@ -1,4 +1,5 @@
 import 'package:flutter_web/material.dart';
+import 'package:iso/styles/all/all.dart';
 
 import 'sub/items/items.dart';
 
@@ -10,7 +11,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromRGBO(175,28,53, 1.0),
+      color: colorSubMain,
       child: items(),
     );
   }

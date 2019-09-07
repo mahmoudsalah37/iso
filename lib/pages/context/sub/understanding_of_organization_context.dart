@@ -1,6 +1,5 @@
 import 'package:flutter_web/material.dart';
 import 'package:iso/styles/all/all.dart';
-import 'package:iso/styles/pages/pages.dart';
 
 class UnderstandingOfOrganizationContextPage extends StatefulWidget {
   _UnderstandingOfOrganizationContextPageState createState() =>
@@ -39,7 +38,7 @@ class _UnderstandingOfOrganizationContextPageState
           ),
           Text(
             'Exclusions',
-            style: textStyle,
+            style: tsMainText,
           ),
           Expanded(
             child: Container(),
@@ -170,7 +169,7 @@ class _UnderstandingOfOrganizationContextPageState
         children: <Widget>[
           Checkbox(
             value: this._isCheck,
-            activeColor: Colors.red,
+            activeColor: colorCheckBox,
             key: UniqueKey(),
             onChanged: (bool isCheck) {
               this._isCheck = isCheck;
@@ -277,7 +276,7 @@ class _UnderstandingOfOrganizationContextPageState
               children: <Widget>[
                 Checkbox(
                   value: true,
-                  activeColor: Colors.red,
+                  activeColor: colorCheckBox,
                   onChanged: (bool isCheck) {},
                 ),
                 Expanded(
@@ -431,7 +430,7 @@ class _UnderstandingOfOrganizationContextPageState
             Navigator.of(context).pop();
             setState(() {});
           },
-          textColor: Colors.red,
+          textColor: colorCheckBox,
           child: const Text('cancel'),
         ),
       ],
@@ -455,7 +454,7 @@ class _UnderstandingOfOrganizationContextPageState
             Navigator.of(context).pop();
             setState(() {});
           },
-          textColor: Colors.red,
+          textColor: colorCheckBox,
           child: const Text('Ok'),
         ),
         FlatButton(

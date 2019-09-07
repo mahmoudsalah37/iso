@@ -37,7 +37,7 @@ class _JobDescriptionPageState extends State<JobDescriptionPage> {
           ),
           Text(
             'Job Description',
-            style: textStyle,
+            style: tsMainText,
           ),
           Expanded(
             child: Container(),
@@ -168,7 +168,7 @@ class _JobDescriptionPageState extends State<JobDescriptionPage> {
         children: <Widget>[
           Checkbox(
             value: this._isCheck,
-            activeColor: Colors.red,
+            activeColor: colorCheckBox,
             key: UniqueKey(),
             onChanged: (bool isCheck) {
               this._isCheck = isCheck;
@@ -320,7 +320,7 @@ class _JobDescriptionPageState extends State<JobDescriptionPage> {
               children: <Widget>[
                 Checkbox(
                   value: true,
-                  activeColor: Colors.red,
+                  activeColor: colorCheckBox,
                   onChanged: (bool isCheck) {},
                 ),
                 Expanded(
@@ -517,7 +517,7 @@ class _JobDescriptionPageState extends State<JobDescriptionPage> {
             Navigator.of(context).pop();
             setState(() {});
           },
-          textColor: Colors.red,
+          textColor: colorCheckBox,
           child: const Text('cancel'),
         ),
       ],
@@ -541,7 +541,7 @@ class _JobDescriptionPageState extends State<JobDescriptionPage> {
             Navigator.of(context).pop();
             setState(() {});
           },
-          textColor: Colors.red,
+          textColor: colorCheckBox,
           child: const Text('Ok'),
         ),
         FlatButton(

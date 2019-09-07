@@ -1,4 +1,5 @@
 import 'package:flutter_web/material.dart';
+import 'package:iso/styles/all/all.dart';
 
 class PolicyPage extends StatefulWidget {
   _PolicyPageState createState() => _PolicyPageState();
@@ -14,9 +15,9 @@ class _PolicyPageState extends State<PolicyPage> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Container(
-            color: Colors.red[300],
+            color: colorContext,
             height: 40.0,
-            child: Center(child: Text('Policy')),
+            child: Center(child: Text('Policy',style: tsMainText,)),
           ),
           Expanded(
             child: SingleChildScrollView(
@@ -27,10 +28,8 @@ class _PolicyPageState extends State<PolicyPage> {
                   child: TextField(
                     decoration: InputDecoration(
                       hintText: 'Policy statement',
-                      
                       hintStyle: TextStyle(
-                        color: Colors.red[200],
-
+                        color: colorHintText,
                       ),
                     ),
                     autofocus: true,

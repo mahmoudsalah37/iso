@@ -37,7 +37,7 @@ class _ExclusionsPageState extends State<ExclusionsPage> {
           ),
           Text(
             'Exclusions',
-            style: textStyle,
+            style: tsMainText,
           ),
           Expanded(
             child: Container(),
@@ -168,7 +168,7 @@ class _ExclusionsPageState extends State<ExclusionsPage> {
         children: <Widget>[
           Checkbox(
             value: this._isCheck,
-            activeColor: Colors.red,
+            activeColor: colorCheckBox,
             key: UniqueKey(),
             onChanged: (bool isCheck) {
               this._isCheck = isCheck;
@@ -260,7 +260,7 @@ class _ExclusionsPageState extends State<ExclusionsPage> {
               children: <Widget>[
                 Checkbox(
                   value: true,
-                  activeColor: Colors.red,
+                  activeColor: colorCheckBox,
                   onChanged: (bool isCheck) {},
                 ),
                 Expanded(
@@ -382,7 +382,7 @@ class _ExclusionsPageState extends State<ExclusionsPage> {
             Navigator.of(context).pop();
             setState(() {});
           },
-          textColor: Colors.red,
+          textColor: colorCheckBox,
           child: const Text('cancel'),
         ),
       ],
@@ -406,7 +406,7 @@ class _ExclusionsPageState extends State<ExclusionsPage> {
             Navigator.of(context).pop();
             setState(() {});
           },
-          textColor: Colors.red,
+          textColor: colorCheckBox,
           child: const Text('Ok'),
         ),
         FlatButton(

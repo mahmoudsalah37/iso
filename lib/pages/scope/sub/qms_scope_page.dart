@@ -1,6 +1,5 @@
 import 'package:flutter_web/material.dart';
 import 'package:iso/styles/all/all.dart';
-import 'package:iso/styles/pages/pages.dart';
 
 class GMSScopePage extends StatefulWidget {
   _GMSScopePageState createState() => _GMSScopePageState();
@@ -37,7 +36,7 @@ class _GMSScopePageState extends State<GMSScopePage> {
           ),
           Text(
             'QMS Scope',
-            style: textStyle,
+            style: tsMainText,
           ),
           Expanded(
             child: Container(),
@@ -168,7 +167,7 @@ class _GMSScopePageState extends State<GMSScopePage> {
         children: <Widget>[
           Checkbox(
             value: this._isCheck,
-            activeColor: Colors.red,
+            activeColor: colorCheckBox,
             key: UniqueKey(),
             onChanged: (bool isCheck) {
               this._isCheck = isCheck;
@@ -260,7 +259,7 @@ class _GMSScopePageState extends State<GMSScopePage> {
               children: <Widget>[
                 Checkbox(
                   value: true,
-                  activeColor: Colors.red,
+                  activeColor: colorCheckBox,
                   onChanged: (bool isCheck) {},
                 ),
                 Expanded(
@@ -387,7 +386,7 @@ class _GMSScopePageState extends State<GMSScopePage> {
             Navigator.of(context).pop();
             setState(() {});
           },
-          textColor: Colors.red,
+          textColor: colorCheckBox,
           child: const Text('cancel'),
         ),
       ],
@@ -411,7 +410,7 @@ class _GMSScopePageState extends State<GMSScopePage> {
             Navigator.of(context).pop();
             setState(() {});
           },
-          textColor: Colors.red,
+          textColor: colorCheckBox,
           child: const Text('Ok'),
         ),
         FlatButton(

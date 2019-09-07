@@ -40,7 +40,7 @@ class _DocumentInformationPageState extends State<DocumentInformationPage> {
           ),
           Text(
             'Document information',
-            style: textStyle,
+            style: tsMainText,
           ),
           Expanded(
             child: Container(),
