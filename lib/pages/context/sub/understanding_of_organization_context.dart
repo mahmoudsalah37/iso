@@ -408,29 +408,25 @@ class _UnderstandingOfOrganizationContextPageState
           ),
         ],
       ),
-      actions: <Widget>[
+    actions: <Widget>[
         FlatButton(
-          highlightColor: Colors.blueAccent[300],
-          hoverColor: Colors.blueAccent[100],
+          highlightColor: colorFlatHighLightPositive,
+          hoverColor: colorFlatHoverPositive,
           onPressed: () {
-            _contextControl.clear();
-            _commentControl.clear();
             Navigator.of(context).pop();
             setState(() {});
           },
-          textColor: Theme.of(context).primaryColor,
+          textColor: colorPositiveText,
           child: const Text('save'),
         ),
         FlatButton(
-          highlightColor: colotFlatHighLight,
-          hoverColor: colorFlatHover,
+          highlightColor: colorFlatHighLightNegative,
+          hoverColor: colorFlatHoverNegative,
           onPressed: () {
-            _contextControl.clear();
-            _commentControl.clear();
             Navigator.of(context).pop();
             setState(() {});
           },
-          textColor: colorCheckBox,
+          textColor: colorNegativeText,
           child: const Text('cancel'),
         ),
       ],
@@ -448,23 +444,23 @@ class _UnderstandingOfOrganizationContextPageState
       ),
       actions: <Widget>[
         FlatButton(
-          highlightColor: colotFlatHighLight,
-          hoverColor: colorFlatHover,
+          highlightColor: colorFlatHighLightNegative,
+          hoverColor: colorFlatHoverNegative,
           onPressed: () {
             Navigator.of(context).pop();
             setState(() {});
           },
-          textColor: colorCheckBox,
+          textColor: colorNegativeText,
           child: const Text('Ok'),
         ),
         FlatButton(
-          highlightColor: Colors.blueAccent[0],
-          hoverColor: Colors.blueAccent[100],
+          highlightColor: colorFlatHighLightPositive,
+          hoverColor: colorFlatHoverPositive,
           onPressed: () {
             Navigator.of(context).pop();
             setState(() {});
           },
-          textColor: Theme.of(context).primaryColor,
+          textColor: colorPositiveText,
           child: const Text('cancel'),
         ),
       ],

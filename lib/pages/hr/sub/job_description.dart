@@ -299,225 +299,77 @@ class _JobDescriptionPageState extends State<JobDescriptionPage> {
   Container bodyTable() {
     return Container(
       height: 500.0,
-      //rows
-      child: ListView(
-        children: <Widget>[
-          Container(
-            height: 40.0,
-            decoration: BoxDecoration(
-              border: Border(
-                left: BorderSide(
-                  color: Colors.grey,
-                  width: 1.0,
-                ),
-                bottom: BorderSide(
-                  color: Colors.grey,
-                  width: 1.0,
-                ),
-              ),
-            ),
-            child: Row(
-              children: <Widget>[
-                Checkbox(
-                  value: true,
-                  activeColor: colorCheckBox,
-                  onChanged: (bool isCheck) {},
-                ),
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                        border: Border(
-                            right: BorderSide(
-                      color: Colors.grey,
-                      width: 1.0,
-                    ))),
-                    child: Center(
-                        child: Text(
-                      '1',
-                    )),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                        border: Border(
-                            right: BorderSide(
-                      color: Colors.grey,
-                      width: 1.0,
-                    ))),
-                    child: Center(
-                        child: Text(
-                      'ahmed',
-                    )),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                        border: Border(
-                            right: BorderSide(
-                      color: Colors.grey,
-                      width: 1.0,
-                    ))),
-                    child: Center(
-                        child: Text(
-                      'ahmed',
-                    )),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                        border: Border(
-                            right: BorderSide(
-                      color: Colors.grey,
-                      width: 1.0,
-                    ))),
-                    child: Center(
-                        child: Text(
-                      'ahmed',
-                    )),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                        border: Border(
-                            right: BorderSide(
-                      color: Colors.grey,
-                      width: 1.0,
-                    ))),
-                    child: Center(
-                        child: Text(
-                      'ahmed',
-                    )),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                        border: Border(
-                            right: BorderSide(
-                      color: Colors.grey,
-                      width: 1.0,
-                    ))),
-                    child: Center(
-                        child: Text(
-                      'ahmed',
-                    )),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                        border: Border(
-                            right: BorderSide(
-                      color: Colors.grey,
-                      width: 1.0,
-                    ))),
-                    child: Center(
-                        child: Text(
-                      'ahmed',
-                    )),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      border: Border(
-                        right: BorderSide(
-                          color: Colors.grey,
-                          width: 1.0,
-                        ),
-                      ),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Egypt',
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: InkWell(
-                    child: SizedBox(
-                      height: 20.0,
-                      width: 20.0, // fixed width and height
-                      child: Image.asset('icons/edit.png'),
-                    ),
-                    onTap: () {
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) =>
-                            _buildUpdateDialog(context),
-                      );
-                    },
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
     );
   }
 
   //add or update item
   Widget _buildUpdateDialog(BuildContext context) {
-    TextEditingController _scopeControl = TextEditingController();
-    TextEditingController _regionControl = TextEditingController();
-    String _scope, _region;
     return AlertDialog(
       title: const Text('Add new item'),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text('Scope'),
+          Text('Job title'),
           TextField(
-            controller: _scopeControl,
             autofocus: true,
-            onChanged: (String scope) {
-              _scope = scope;
-            },
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
-            child: Text('Region'),
+            child: Text('Report to'),
           ),
           TextField(
-            controller: _regionControl,
             autofocus: true,
-            onChanged: (String region) {
-              _region = region;
-            },
+          ),
+           Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text('Required Qualification'),
+          ),
+          TextField(
+            autofocus: true,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text('Experience'),
+          ),
+          TextField(
+            autofocus: true,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text('Skills'),
+          ),
+          TextField(
+            autofocus: true,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text('Rules and Responsibilities'),
+          ),
+          TextField(
+            autofocus: true,
           ),
         ],
       ),
-      actions: <Widget>[
+   actions: <Widget>[
         FlatButton(
-          highlightColor: Colors.blueAccent[300],
-          hoverColor: Colors.blueAccent[100],
+          highlightColor: colorFlatHighLightPositive,
+          hoverColor: colorFlatHoverPositive,
           onPressed: () {
-            _scopeControl.clear();
-            _regionControl.clear();
             Navigator.of(context).pop();
             setState(() {});
           },
-          textColor: Theme.of(context).primaryColor,
+          textColor: colorPositiveText,
           child: const Text('save'),
         ),
         FlatButton(
-          highlightColor: colotFlatHighLight,
-          hoverColor: colorFlatHover,
+          highlightColor: colorFlatHighLightNegative,
+          hoverColor: colorFlatHoverNegative,
           onPressed: () {
-            _scopeControl.clear();
-            _regionControl.clear();
             Navigator.of(context).pop();
             setState(() {});
           },
-          textColor: colorCheckBox,
+          textColor: colorNegativeText,
           child: const Text('cancel'),
         ),
       ],
@@ -535,23 +387,23 @@ class _JobDescriptionPageState extends State<JobDescriptionPage> {
       ),
       actions: <Widget>[
         FlatButton(
-          highlightColor: colotFlatHighLight,
-          hoverColor: colorFlatHover,
+          highlightColor: colorFlatHighLightNegative,
+          hoverColor: colorFlatHoverNegative,
           onPressed: () {
             Navigator.of(context).pop();
             setState(() {});
           },
-          textColor: colorCheckBox,
+          textColor: colorNegativeText,
           child: const Text('Ok'),
         ),
         FlatButton(
-          highlightColor: Colors.blueAccent[0],
-          hoverColor: Colors.blueAccent[100],
+          highlightColor: colorFlatHighLightPositive,
+          hoverColor: colorFlatHoverPositive,
           onPressed: () {
             Navigator.of(context).pop();
             setState(() {});
           },
-          textColor: Theme.of(context).primaryColor,
+          textColor: colorPositiveText,
           child: const Text('cancel'),
         ),
       ],
