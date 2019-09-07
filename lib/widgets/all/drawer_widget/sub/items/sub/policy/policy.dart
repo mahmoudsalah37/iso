@@ -11,7 +11,7 @@ class Policy extends StatefulWidget {
 }
 
 class _PolicyState extends State<Policy> {
-  bool show = false, isBlue0 = false;
+  bool show = false, isHover0 = false;
   @override
   Widget build(BuildContext context) {
     final page = Provider.of<PageModel>(context);
@@ -64,12 +64,12 @@ class _PolicyState extends State<Policy> {
                   child: Text(
                     'Policy',
                     style:
-                        TextStyle(color: isBlueItem(isBlue0)),
+                        TextStyle(color: isHoverItem(isHover0)),
                     textAlign: TextAlign.left,
                   ),
                 ),
                 onHover: (bool onHover) {
-                  isBlue0 = onHover;
+                  isHover0 = onHover;
                   setState(() {});
                 },
                 onTap: () {

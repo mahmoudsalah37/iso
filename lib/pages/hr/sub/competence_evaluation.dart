@@ -2,11 +2,12 @@ import 'package:flutter_web/material.dart';
 import 'package:iso/styles/all/all.dart';
 import 'package:iso/styles/pages/pages.dart';
 
-class GMSScopePage extends StatefulWidget {
-  _GMSScopePageState createState() => _GMSScopePageState();
+class CompentenceEvaluationPage extends StatefulWidget {
+  _CompentenceEvaluationPageState createState() =>
+      _CompentenceEvaluationPageState();
 }
 
-class _GMSScopePageState extends State<GMSScopePage> {
+class _CompentenceEvaluationPageState extends State<CompentenceEvaluationPage> {
   String _textSearch;
   bool _isCheck = false;
   @override
@@ -36,7 +37,7 @@ class _GMSScopePageState extends State<GMSScopePage> {
             width: 4.0,
           ),
           Text(
-            'QMS Scope',
+            'Competence Evaluation',
             style: textStyle,
           ),
           Expanded(
@@ -200,7 +201,7 @@ class _GMSScopePageState extends State<GMSScopePage> {
               ))),
               child: Center(
                   child: Text(
-                'Scope',
+                'Department',
                 style: textStyleColumnText,
               )),
             ),
@@ -215,7 +216,22 @@ class _GMSScopePageState extends State<GMSScopePage> {
               ))),
               child: Center(
                   child: Text(
-                'Region',
+                'Employee name',
+                style: textStyleColumnText,
+              )),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                  border: Border(
+                      right: BorderSide(
+                color: Colors.black,
+                width: 2.0,
+              ))),
+              child: Center(
+                  child: Text(
+                'Percentage rating',
                 style: textStyleColumnText,
               )),
             ),
@@ -274,6 +290,76 @@ class _GMSScopePageState extends State<GMSScopePage> {
                     child: Center(
                         child: Text(
                       '1',
+                    )),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        border: Border(
+                            right: BorderSide(
+                      color: Colors.grey,
+                      width: 1.0,
+                    ))),
+                    child: Center(
+                        child: Text(
+                      'ahmed',
+                    )),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        border: Border(
+                            right: BorderSide(
+                      color: Colors.grey,
+                      width: 1.0,
+                    ))),
+                    child: Center(
+                        child: Text(
+                      'ahmed',
+                    )),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        border: Border(
+                            right: BorderSide(
+                      color: Colors.grey,
+                      width: 1.0,
+                    ))),
+                    child: Center(
+                        child: Text(
+                      'ahmed',
+                    )),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        border: Border(
+                            right: BorderSide(
+                      color: Colors.grey,
+                      width: 1.0,
+                    ))),
+                    child: Center(
+                        child: Text(
+                      'ahmed',
+                    )),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        border: Border(
+                            right: BorderSide(
+                      color: Colors.grey,
+                      width: 1.0,
+                    ))),
+                    child: Center(
+                        child: Text(
+                      'ahmed',
                     )),
                   ),
                 ),

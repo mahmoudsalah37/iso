@@ -27,8 +27,10 @@ class _PolicyPageState extends State<PolicyPage> {
                   child: TextField(
                     decoration: InputDecoration(
                       hintText: 'Policy statement',
+                      
                       hintStyle: TextStyle(
                         color: Colors.red[200],
+
                       ),
                     ),
                     autofocus: true,
@@ -36,6 +38,7 @@ class _PolicyPageState extends State<PolicyPage> {
                     onChanged: (String textPolicy) {
                       this._textPolicy = textPolicy;
                     },
+                    textAlign: TextAlign.start,
                   ),
                 ),
               ),

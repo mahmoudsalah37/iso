@@ -7,13 +7,11 @@ import 'package:iso/styles/drawer_widget/items/style_item.dart';
 import '../../../../../view_page.dart';
 
 class Context extends StatefulWidget {
-  Context({Key key}) : super(key: key);
-
   _ContextState createState() => _ContextState();
 }
 
 class _ContextState extends State<Context> {
-  bool show = false, isBlue0 = false, isBlue1 = false;
+  bool show = false, isHover0 = false, isHover1 = false;
   @override
   Widget build(BuildContext context) {
     final page = Provider.of<PageModel>(context);
@@ -68,12 +66,12 @@ class _ContextState extends State<Context> {
                   padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
                   child: Text(
                     'Understanding of Organization context',
-                    style: TextStyle(color: isBlueItem(isBlue0)),
+                    style: TextStyle(color: isHoverItem(isHover0)),
                     textAlign: TextAlign.left,
                   ),
                 ),
                 onHover: (bool onHover) {
-                  isBlue0 = onHover;
+                  isHover0 = onHover;
                   setState(() {});
                 },
                 onTap: () {
@@ -86,12 +84,12 @@ class _ContextState extends State<Context> {
                   padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
                   child: Text(
                     'Interested Parties',
-                    style: TextStyle(color: isBlueItem(isBlue1)),
+                    style: TextStyle(color: isHoverItem(isHover1)),
                     textAlign: TextAlign.left,
                   ),
                 ),
                 onHover: (bool onHover) {
-                  isBlue1 = onHover;
+                  isHover1 = onHover;
                   setState(() {});
                 },
                 onTap: () {

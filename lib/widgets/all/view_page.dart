@@ -1,5 +1,6 @@
 import 'package:flutter_web/material.dart';
 import 'package:iso/pages/context/context.dart';
+import 'package:iso/pages/hr/hr.dart';
 import 'package:iso/pages/policy/policy.dart';
 import 'package:iso/pages/scope/scope.dart';
 import 'package:iso/pages/documented_infomation/documented_infomation.dart';
@@ -20,6 +21,7 @@ class _ViewPageState extends State<ViewPage> {
         Scope(widget.child),
         Context(widget.child),
         DocumentedInformation(widget.child),
+        HR(widget.child),
       ],
     );
   }

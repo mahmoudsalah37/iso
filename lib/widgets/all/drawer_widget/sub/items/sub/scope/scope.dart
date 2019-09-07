@@ -11,7 +11,7 @@ class Scope extends StatefulWidget {
 }
 
 class _ScopeState extends State<Scope> {
-  bool show = false, isBlue0 = false, isBlue1 = false;
+  bool show = false, isHover0 = false, isHover1 = false;
   @override
   Widget build(BuildContext context) {
     final page = Provider.of<PageModel>(context);
@@ -67,12 +67,12 @@ class _ScopeState extends State<Scope> {
                   child: Text(
                     'QMS Scope',
                     style:
-                        TextStyle(color: isBlueItem(isBlue0)),
+                        TextStyle(color: isHoverItem(isHover0)),
                     textAlign: TextAlign.left,
                   ),
                 ),
                 onHover: (bool onHover) {
-                 isBlue0 = onHover;
+                 isHover0 = onHover;
                   setState(() {});
                 },
                 onTap: () {
@@ -86,12 +86,12 @@ class _ScopeState extends State<Scope> {
                   child: Text(
                     'Exclusions',
                     style:
-                        TextStyle(color: isBlueItem(isBlue1)),
+                        TextStyle(color: isHoverItem(isHover1)),
                     textAlign: TextAlign.left,
                   ),
                 ),
                 onHover: (bool onHover) {
-                  isBlue1 = onHover;
+                  isHover1 = onHover;
                   setState(() {});
                 },
                 onTap: () {
