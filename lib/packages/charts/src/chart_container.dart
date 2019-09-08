@@ -59,7 +59,7 @@ class ChartContainer<D> extends CustomPaint {
 
   @override
   RenderCustomPaint createRenderObject(BuildContext context) {
-    return new ChartContainerRenderObject<D>()..reconfigure(this, context);
+    return  ChartContainerRenderObject<D>()..reconfigure(this, context);
   }
 
   @override
@@ -81,7 +81,7 @@ class ChartContainerRenderObject<D> extends RenderCustomPaint
   bool _exploreMode = false;
   List<common.A11yNode> _a11yNodes;
 
-  final Logger _log = new Logger('charts_flutter.charts_container');
+  final Logger _log =  Logger('charts_flutter.charts_container');
 
   /// Keeps the last time the configuration was changed and chart draw on the
   /// common chart is called.
@@ -89,8 +89,8 @@ class ChartContainerRenderObject<D> extends RenderCustomPaint
   /// An assert uses this value to check if the configuration changes more
   /// frequently than a threshold. This is to notify developers of something
   /// wrong in the configuration of their charts if it keeps changes (usually
-  /// due to equality checks not being implemented and when a new object is
-  /// created inside a new chart widget, a change is detected even if nothing
+  /// due to equality checks not being implemented and when a  object is
+  /// created inside a  chart widget, a change is detected even if nothing
   /// has changed).
   DateTime _lastConfigurationChangeTime;
 
@@ -103,12 +103,12 @@ class ChartContainerRenderObject<D> extends RenderCustomPaint
     _dateTimeFactory = (config.chartWidget is TimeSeriesChart)
         ? (config.chartWidget as TimeSeriesChart).dateTimeFactory
         : null;
-    _dateTimeFactory ??= new common.LocalDateTimeFactory();
+    _dateTimeFactory ??=  common.LocalDateTimeFactory();
 
     if (_chart == null) {
       common.Performance.time('chartsCreate');
       _chart = config.chartWidget.createCommonChart(_chartState);
-      _chart.init(this, new GraphicsFactory(context));
+      _chart.init(this,  GraphicsFactory(context));
       common.Performance.timeEnd('chartsCreate');
     }
     common.Performance.time('chartsConfig');
@@ -183,23 +183,23 @@ class ChartContainerRenderObject<D> extends RenderCustomPaint
 
     // Set the painter used for calling common chart for paint.
     // This painter is also used to generate semantic nodes for a11y.
-    _setNewPainter();
+    _setPainter();
   }
 
   /// If user managed state is set, check each setting to see if it is different
   /// than internal chart state and only update if different.
-  _updateUserManagedState(UserManagedState<D> newState) {
-    if (newState == null) {
+  _updateUserManagedState(UserManagedState<D> State) {
+    if (State == null) {
       return;
     }
 
     // Only override the selection model if it is different than the existing
     // selection model so update listeners are not unnecessarily triggered.
-    for (common.SelectionModelType type in newState.selectionModels.keys) {
+    for (common.SelectionModelType type in State.selectionModels.keys) {
       final model = _chart.getSelectionModel(type);
 
       final userModel =
-          newState.selectionModels[type].getModel(_chart.currentSeriesList);
+          State.selectionModels[type].getModel(_chart.currentSeriesList);
 
       if (model != userModel) {
         model.updateSelection(
@@ -218,7 +218,7 @@ class ChartContainerRenderObject<D> extends RenderCustomPaint
 
     // Check if the gestures registered in gesture registry matches what the
     // common chart is listening to.
-    // TODO: Still need a test for this for sanity sake.
+    
 //    assert(_desiredGestures
 //        .difference(_chart.gestureProxy.listenedGestures)
 //        .isEmpty);
@@ -317,7 +317,7 @@ class ChartContainerRenderObject<D> extends RenderCustomPaint
       {String announcement}) {
     _a11yNodes = nodes;
     _exploreMode = true;
-    _setNewPainter();
+    _setPainter();
     requestRebuild();
     if (announcement != null) {
       SemanticsService.announce(announcement, textDirection);
@@ -328,15 +328,15 @@ class ChartContainerRenderObject<D> extends RenderCustomPaint
   void disableA11yExploreMode({String announcement}) {
     _a11yNodes = [];
     _exploreMode = false;
-    _setNewPainter();
+    _setPainter();
     requestRebuild();
     if (announcement != null) {
       SemanticsService.announce(announcement, textDirection);
     }
   }
 
-  void _setNewPainter() {
-    painter = new ChartContainerCustomPaint(
+  void _setPainter() {
+    painter =  ChartContainerCustomPaint(
         oldPainter: painter,
         chart: _chart,
         exploreMode: _exploreMode,
@@ -363,7 +363,7 @@ class ChartContainerCustomPaint extends CustomPainter {
         oldPainter.textDirection == textDirection) {
       return oldPainter;
     } else {
-      return new ChartContainerCustomPaint._internal(
+      return  ChartContainerCustomPaint._internal(
           chart: chart,
           exploreMode: exploreMode ?? false,
           a11yNodes: a11yNodes ?? <common.A11yNode>[],
@@ -377,7 +377,7 @@ class ChartContainerCustomPaint extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     common.Performance.time('chartsPaint');
-    final chartsCanvas = new ChartCanvas(canvas, chart.graphicsFactory);
+    final chartsCanvas =  ChartCanvas(canvas, chart.graphicsFactory);
     chart.paint(chartsCanvas);
     common.Performance.timeEnd('chartsPaint');
   }
@@ -401,14 +401,14 @@ class ChartContainerCustomPaint extends CustomPainter {
     final nodes = <CustomPainterSemantics>[];
 
     for (common.A11yNode node in a11yNodes) {
-      final rect = new Rect.fromLTWH(
+      final rect =  Rect.fromLTWH(
           node.boundingBox.left.toDouble(),
           node.boundingBox.top.toDouble(),
           node.boundingBox.width.toDouble(),
           node.boundingBox.height.toDouble());
-      nodes.add(new CustomPainterSemantics(
+      nodes.add( CustomPainterSemantics(
           rect: rect,
-          properties: new SemanticsProperties(
+          properties:  SemanticsProperties(
               value: node.label,
               textDirection: textDirection,
               onDidGainAccessibilityFocus: node.onFocus)));

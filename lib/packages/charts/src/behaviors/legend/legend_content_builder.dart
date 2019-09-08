@@ -62,7 +62,6 @@ abstract class BaseLegendContentBuilder implements LegendContentBuilder {
   }
 }
 
-// TODO: Expose settings for tabular layout.
 /// Strategy that builds a tabular legend.
 ///
 /// [legendEntryLayout] custom strategy for creating widgets for each legend
@@ -78,7 +77,7 @@ class TabularLegendContentBuilder extends BaseLegendContentBuilder {
       : this.legendEntryLayout =
             legendEntryLayout ?? const SimpleLegendEntryLayout(),
         this.legendLayout =
-            legendLayout ?? new TabularLegendLayout.horizontalFirst();
+            legendLayout ?? TabularLegendLayout.horizontalFirst();
 
   @override
   bool operator ==(Object o) {

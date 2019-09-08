@@ -21,10 +21,10 @@ import 'proxy_provider.dart';
 /// which explains in further details why using the `.value` constructor to
 /// create values is undesired.
 ///
-/// - DO create a new [ChangeNotifier] inside `builder`.
+/// - DO create a  [ChangeNotifier] inside `builder`.
 /// ```dart
 /// ChangeNotifierProvider(
-///   builder: (_) => new MyChangeNotifier(),
+///   builder: (_) =>  MyChangeNotifier(),
 ///   child: ...
 /// )
 /// ```
@@ -32,7 +32,7 @@ import 'proxy_provider.dart';
 /// - DON'T use [ChangeNotifierProvider.value] to create your [ChangeNotifier].
 /// ```dart
 /// ChangeNotifierProvider.value(
-///   value: new MyChangeNotifier(),
+///   value:  MyChangeNotifier(),
 ///   child: ...
 /// )
 /// ```
@@ -46,7 +46,7 @@ import 'proxy_provider.dart';
 /// int count;
 ///
 /// ChangeNotifierProvider(
-///   builder: (_) => new MyChangeNotifier(count),
+///   builder: (_) =>  MyChangeNotifier(count),
 ///   child: ...
 /// )
 /// ```
@@ -174,7 +174,7 @@ class ChangeNotifierProvider<T extends ChangeNotifier>
 ///
 ///   This will cause your state to be lost when one of the values used updates.
 ///   It will also cause uncesserary overhead because it will dispose the
-///   previous notifier, then subscribes to the new one.
+///   previous notifier, then subscribes to the  one.
 ///
 ///  Instead use properties with custom setters like shown previously, or
 ///   methods.

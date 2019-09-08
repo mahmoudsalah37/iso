@@ -101,7 +101,7 @@ class _PieChartState extends State<PieChart>
   @override
   void didUpdateWidget(PieChart oldWidget) {
     //This condition isnt working oldWidget.data is giving same data as
-    //new widget.
+    // widget.
     // print(oldWidget.dataMap);
     // print(widget.dataMap);
     //if (oldWidget.dataMap != widget.dataMap) initData();
@@ -193,8 +193,8 @@ class _PieChartState extends State<PieChart>
 
   Color getColor(List<Color> colorList, int index) {
     if (index > (colorList.length - 1)) {
-      var newIndex = index % (colorList.length - 1);
-      return colorList.elementAt(newIndex);
+      var Index = index % (colorList.length - 1);
+      return colorList.elementAt(Index);
     } else
       return colorList.elementAt(index);
   }
@@ -207,7 +207,7 @@ class _PieChartState extends State<PieChart>
 }
 
 class PieChartPainter extends CustomPainter {
-  List<Paint> paintList = new List();
+  List<Paint> paintList =  List();
   List<double> subParts;
   double total = 0;
   double totalAngle = math.pi * 2;
@@ -248,7 +248,7 @@ class PieChartPainter extends CustomPainter {
     finalAngle = 0;
     for (int i = 0; i < subParts.length; i++) {
       canvas.drawArc(
-        new Rect.fromLTWH(0.0, 0.0, size.width, size.height),
+         Rect.fromLTWH(0.0, 0.0, size.width, size.height),
         prevAngle,
         (((totalAngle) / total) * subParts[i]),
         true,
@@ -275,26 +275,26 @@ class PieChartPainter extends CustomPainter {
 
   Color getColor(List<Color> colorList, int index) {
     if (index > (colorList.length - 1)) {
-      var newIndex = index % (colorList.length - 1);
-      return colorList.elementAt(newIndex);
+      var Index = index % (colorList.length - 1);
+      return colorList.elementAt(Index);
     } else
       return colorList.elementAt(index);
   }
 
   void drawName(Canvas context, String name, double x, double y, Size size) {
-    TextSpan span = new TextSpan(
-        style: new TextStyle(
+    TextSpan span =  TextSpan(
+        style:  TextStyle(
             color: chartValuesColor,
             fontSize: 12.0,
             fontWeight: FontWeight.w700),
         text: name);
-    TextPainter tp = new TextPainter(
+    TextPainter tp =  TextPainter(
         text: span,
         textAlign: TextAlign.left,
         textDirection: TextDirection.rtl);
     tp.layout();
     tp.paint(
-        context, new Offset(size.width / 2 + x - 6, size.width / 2 + y - 6));
+        context,  Offset(size.width / 2 + x - 6, size.width / 2 + y - 6));
   }
 
   @override

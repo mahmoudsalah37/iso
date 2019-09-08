@@ -51,10 +51,12 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
   void initState() {
     super.initState();
     selectedDate = DateTime(widget.initialDate.year, widget.initialDate.month);
-    if (widget.firstDate != null)
+    if (widget.firstDate != null) {
       _firstDate = DateTime(widget.firstDate.year, widget.firstDate.month);
-    if (widget.lastDate != null)
+    }
+    if (widget.lastDate != null) {
       _lastDate = DateTime(widget.lastDate.year, widget.lastDate.month);
+    }
     displayedPage = selectedDate.year;
     pageController = PageController(initialPage: displayedPage);
   }

@@ -6,7 +6,7 @@ import 'selector.dart' show Selector;
 /// Obtain [Provider<T>] from its ancestors and pass its value to [builder].
 ///
 /// The widget [Consumer] doesn't do any fancy work. It just calls [Provider.of]
-/// in a new widget, and delegate its `build` implementation to [builder].
+/// in a  widget, and delegate its `build` implementation to [builder].
 ///
 /// [builder] must not be null and may be called multiple times (such as when
 /// provided value change).
@@ -127,7 +127,7 @@ import 'selector.dart' show Selector;
 /// In that example, `BarWidget` is built outside of [builder]. Then, the
 /// `BarWidget` instance is passed to [builder] as the last parameter.
 ///
-/// This means that when [builder] is called again with new values, new
+/// This means that when [builder] is called again with  values, 
 /// instance of `BarWidget` will not be recreated.
 /// This let Flutter knows that it doesn't have to rebuild `BarWidget`.
 /// Therefore in such configuration, only `FooWidget` will rebuild

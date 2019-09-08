@@ -334,7 +334,6 @@ class _FlutterDatumLegend<D> extends common.DatumLegend<D>
         .build(context, legendState, this, showMeasures: showMeasures);
   }
 
-  /// TODO: Maybe highlight the pie wedge.
   @override
   onLegendEntryTapUp(common.LegendEntry detail) {}
 }

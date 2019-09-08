@@ -103,7 +103,6 @@ abstract class BaseChart<D> extends StatefulWidget {
 
     // Add custom series renderers if any were provided.
     if (customSeriesRenderers != null) {
-      // TODO: This logic does not remove old renderers and
       // shouldn't require the series configs to remain in the same order.
       for (var i = 0; i < customSeriesRenderers.length; i++) {
         if (oldWidget == null ||
