@@ -1,6 +1,7 @@
 import 'package:flutter_web/material.dart';
-import 'package:iso/pages/hr/sub/dashboard.dart';
-import 'package:iso/pages/hr/sub/job_description.dart';
+import 'sub/competence_evaluation.dart';
+import 'sub/dashboard.dart';
+import 'sub/job_description.dart';
 
 import 'sub/training_plan.dart';
 
@@ -19,6 +20,7 @@ class _HRState extends State<HR> {
         DashboardHRPage(),
         JobDescriptionPage(),
         TrainingPlanPage(),
+        CompentenceEvaluationPage(),
       ],
     );
   }

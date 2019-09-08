@@ -1,6 +1,5 @@
 import 'package:flutter_web/material.dart';
 import 'package:iso/styles/all/all.dart';
-import 'package:iso/styles/pages/pages.dart';
 
 class CompentenceEvaluationPage extends StatefulWidget {
   _CompentenceEvaluationPageState createState() =>
@@ -20,7 +19,7 @@ class _CompentenceEvaluationPageState extends State<CompentenceEvaluationPage> {
           //Head
           headPage(context),
           //Body
-          bodyPage()
+          bodyPage(),
         ],
       ),
     );
@@ -421,33 +420,29 @@ class _CompentenceEvaluationPageState extends State<CompentenceEvaluationPage> {
 
   //add or update item
   Widget _buildUpdateDialog(BuildContext context) {
-    TextEditingController _scopeControl = TextEditingController();
-    TextEditingController _regionControl = TextEditingController();
-    String _scope, _region;
     return AlertDialog(
       title: const Text('Add new item'),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text('Scope'),
+          Text('Department'),
           TextField(
-            controller: _scopeControl,
             autofocus: true,
-            onChanged: (String scope) {
-              _scope = scope;
-            },
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
-            child: Text('Region'),
+            child: Text('Employee name'),
           ),
           TextField(
-            controller: _regionControl,
             autofocus: true,
-            onChanged: (String region) {
-              _region = region;
-            },
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text('Percentage rating'),
+          ),
+          TextField(
+            autofocus: true,
           ),
         ],
       ),

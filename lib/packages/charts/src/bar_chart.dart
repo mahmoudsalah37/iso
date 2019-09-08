@@ -69,7 +69,7 @@ class BarChart extends CartesianChart<String> {
           secondaryMeasureAxis: secondaryMeasureAxis,
           disjointMeasureAxes: disjointMeasureAxes,
           defaultRenderer: defaultRenderer ??
-              new common.BarRendererConfig<String>(
+              common.BarRendererConfig<String>(
                   groupingType: barGroupingType,
                   barRendererDecorator: barRendererDecorator),
           customSeriesRenderers: customSeriesRenderers,
@@ -87,7 +87,7 @@ class BarChart extends CartesianChart<String> {
     // Optionally create primary and secondary measure axes if the chart was
     // configured with them. If no axes were configured, then the chart will
     // use its default types (usually a numeric axis).
-    return new common.BarChart(
+    return common.BarChart(
         vertical: vertical,
         layoutConfig: layoutConfig?.commonLayoutConfig,
         primaryMeasureAxis: primaryMeasureAxis?.createAxis(),
@@ -99,6 +99,6 @@ class BarChart extends CartesianChart<String> {
   void addDefaultInteractions(List<ChartBehavior> behaviors) {
     super.addDefaultInteractions(behaviors);
 
-    behaviors.add(new DomainHighlighter());
+    behaviors.add(DomainHighlighter());
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter_web/material.dart';
+import 'package:iso/packages/month_picker/month_picker.dart';
 import 'package:iso/styles/all/all.dart';
 import 'package:iso/styles/pages/pages.dart';
 
@@ -495,37 +496,92 @@ class _TrainingPlanPageState extends State<TrainingPlanPage> {
 
   //add or update item
   Widget _buildUpdateDialog(BuildContext context) {
-    TextEditingController _scopeControl = TextEditingController();
-    TextEditingController _regionControl = TextEditingController();
-    String _scope, _region;
     return AlertDialog(
       title: const Text('Add new item'),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text('Scope'),
+          Text('Year'),
           TextField(
-            controller: _scopeControl,
-            autofocus: true,
-            onChanged: (String scope) {
-              _scope = scope;
+            enabled: true,
+            onTap: () async {
+              DateTime x = await showDatePicker(
+                  context: context,
+                  initialDatePickerMode: DatePickerMode.year,
+                  initialDate: DateTime.now(),
+                  firstDate: DateTime(1900),
+                  lastDate: DateTime(2050));
             },
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
-            child: Text('Region'),
+            child: Text('Month'),
           ),
           TextField(
-            controller: _regionControl,
-            autofocus: true,
-            onChanged: (String region) {
-              _region = region;
+            enabled: true,
+            onTap: () async {
+              var x = await showMonthPicker(
+                      context: context,
+                      firstDate: DateTime(1900),
+                      lastDate: DateTime(2050),
+                      initialDate: DateTime.now())
+                  .then(
+                (date) => setState(() {}),
+              );
+              // DateTime x = await showDatePicker(
+              //     context: context,
+              //     initialDatePickerMode: DatePickerMode.,
+              //     initialDate: DateTime.now(),
+              //     firstDate: DateTime(1900),
+              //     lastDate: DateTime(2050));
             },
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text('Training subject'),
+          ),
+          TextField(
+            autocorrect: true,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text('Provider Name'),
+          ),
+          TextField(
+            autocorrect: true,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text('Expected Number of Trainees'),
+          ),
+          TextField(
+            autocorrect: true,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text('Actual Trainees number'),
+          ),
+          TextField(
+            autocorrect: true,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text('Number of training days/Hours'),
+          ),
+          TextField(
+            autocorrect: true,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text('Status'),
+          ),
+          TextField(
+            autocorrect: true,
           ),
         ],
       ),
-   actions: <Widget>[
+      actions: <Widget>[
         FlatButton(
           highlightColor: colorFlatHighLightPositive,
           hoverColor: colorFlatHoverPositive,

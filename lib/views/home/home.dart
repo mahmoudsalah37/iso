@@ -17,10 +17,12 @@ class _HomeState extends State<Home> {
       body: Container(
         child: Row(
           children: <Widget>[
+            //Drawer
             Expanded(
               flex: 1,
               child: DrawerWidget(),
             ),
+            //View
             Expanded(
               flex: 5,
               child: Container(
