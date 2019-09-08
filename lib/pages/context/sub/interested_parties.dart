@@ -409,28 +409,28 @@ class _InterenstedPartiesPageState extends State<InterenstedPartiesPage> {
             child: Text('Interested Parties'),
           ),
           TextField(
-            autofocus: true,
+            
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: Text('Needs and Expectation'),
           ),
           TextField(
-            autofocus: true,
+            
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: Text('How to Meet'),
           ),
           TextField(
-            autofocus: true,
+            
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: Text('Evidence'),
           ),
           TextField(
-            autofocus: true,
+            
           ),
         ],
       ),

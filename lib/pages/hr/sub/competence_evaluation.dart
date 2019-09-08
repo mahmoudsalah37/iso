@@ -428,21 +428,21 @@ class _CompentenceEvaluationPageState extends State<CompentenceEvaluationPage> {
         children: <Widget>[
           Text('Department'),
           TextField(
-            autofocus: true,
+            
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: Text('Employee name'),
           ),
           TextField(
-            autofocus: true,
+            
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: Text('Percentage rating'),
           ),
           TextField(
-            autofocus: true,
+            
           ),
         ],
       ),

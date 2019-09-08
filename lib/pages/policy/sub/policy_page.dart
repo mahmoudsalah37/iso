@@ -17,7 +17,11 @@ class _PolicyPageState extends State<PolicyPage> {
           Container(
             color: colorContext,
             height: 40.0,
-            child: Center(child: Text('Policy',style: tsMainText,)),
+            child: Center(
+                child: Text(
+              'Policy',
+              style: tsMainText,
+            )),
           ),
           Expanded(
             child: SingleChildScrollView(
@@ -32,10 +36,10 @@ class _PolicyPageState extends State<PolicyPage> {
                         color: colorHintText,
                       ),
                     ),
-                    autofocus: true,
                     maxLines: 30,
                     onChanged: (String textPolicy) {
                       this._textPolicy = textPolicy;
+                      setState(() {});
                     },
                     textAlign: TextAlign.start,
                   ),

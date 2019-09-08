@@ -1,6 +1,5 @@
 import 'package:flutter_web/material.dart';
 import 'package:iso/styles/all/all.dart';
-import 'package:iso/styles/pages/pages.dart';
 
 class JobDescriptionPage extends StatefulWidget {
   _JobDescriptionPageState createState() => _JobDescriptionPageState();
@@ -312,42 +311,42 @@ class _JobDescriptionPageState extends State<JobDescriptionPage> {
         children: <Widget>[
           Text('Job title'),
           TextField(
-            autofocus: true,
+            
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: Text('Report to'),
           ),
           TextField(
-            autofocus: true,
+            
           ),
            Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: Text('Required Qualification'),
           ),
           TextField(
-            autofocus: true,
+            
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: Text('Experience'),
           ),
           TextField(
-            autofocus: true,
+            
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: Text('Skills'),
           ),
           TextField(
-            autofocus: true,
+            
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: Text('Rules and Responsibilities'),
           ),
           TextField(
-            autofocus: true,
+            
           ),
         ],
       ),

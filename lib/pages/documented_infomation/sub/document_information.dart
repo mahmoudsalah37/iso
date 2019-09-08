@@ -632,14 +632,14 @@ class _DocumentInformationPageState extends State<DocumentInformationPage> {
           children: <Widget>[
             Text('Document name'),
             TextField(
-              autofocus: true,
+              
             ),
             Padding(
               padding: const EdgeInsets.only(top: 8.0),
               child: Text('Document number'),
             ),
             TextField(
-              autofocus: true,
+              
             ),
             Padding(
               padding: const EdgeInsets.only(top: 8.0),
@@ -729,14 +729,14 @@ class _DocumentInformationPageState extends State<DocumentInformationPage> {
               child: Text('prepared by'),
             ),
             TextField(
-              autofocus: true,
+              
             ),
             Padding(
               padding: const EdgeInsets.only(top: 8.0),
               child: Text('approved by'),
             ),
             TextField(
-              autofocus: true,
+              
             ),
             //Attachment
             Padding(

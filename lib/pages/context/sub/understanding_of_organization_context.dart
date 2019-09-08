@@ -387,7 +387,7 @@ class _UnderstandingOfOrganizationContextPageState
           Text('Context'),
           TextField(
             controller: _contextControl,
-            autofocus: true,
+            
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
@@ -404,7 +404,7 @@ class _UnderstandingOfOrganizationContextPageState
           ),
           TextField(
             controller: _commentControl,
-            autofocus: true,
+            
           ),
         ],
       ),

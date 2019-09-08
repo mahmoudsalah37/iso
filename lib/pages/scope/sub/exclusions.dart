@@ -346,7 +346,7 @@ class _ExclusionsPageState extends State<ExclusionsPage> {
           Text('Number of excluded Clause'),
           TextField(
             controller: _clauseControl,
-            autofocus: true,
+            
            
           ),
           Padding(
@@ -355,7 +355,7 @@ class _ExclusionsPageState extends State<ExclusionsPage> {
           ),
           TextField(
             controller: _exclusionControl,
-            autofocus: true,
+            
             
           ),
         ],

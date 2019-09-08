@@ -1,4 +1,6 @@
 import 'package:flutter_web/material.dart';
+import 'sub/employees_database.dart';
+import 'sub/training_attendance_and_evaluation.dart';
 import 'sub/competence_evaluation.dart';
 import 'sub/dashboard.dart';
 import 'sub/job_description.dart';
@@ -21,6 +23,8 @@ class _HRState extends State<HR> {
         JobDescriptionPage(),
         TrainingPlanPage(),
         CompentenceEvaluationPage(),
+        TrainingAttendenceAndEvaluationPage(),
+        EmployeesDatabasePage()
       ],
     );
   }

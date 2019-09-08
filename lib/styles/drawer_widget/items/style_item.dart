@@ -5,6 +5,6 @@ const double leftPaddingSubListItem = 23.0;
 const double heightContainerItem = 36.0;
 
 //Check on hover
-Color isHoverItem(bool isBlue) {
-  return isBlue ? Color.fromRGBO(175,147,153, 1.0) : Colors.white;
+Color isHoverItem(bool isHover) {
+  return isHover ? Color.fromRGBO(175, 147, 153, 1.0) : Colors.white;
 }

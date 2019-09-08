@@ -346,7 +346,7 @@ class _GMSScopePageState extends State<GMSScopePage> {
           Text('Scope'),
           TextField(
             controller: _scopeControl,
-            autofocus: true,
+            
             onChanged: (String scope) {
               _scope = scope;
             },
@@ -357,7 +357,7 @@ class _GMSScopePageState extends State<GMSScopePage> {
           ),
           TextField(
             controller: _regionControl,
-            autofocus: true,
+            
             onChanged: (String region) {
               _region = region;
             },
