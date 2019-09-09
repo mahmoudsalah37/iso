@@ -295,32 +295,26 @@ class _EmployeesDatabasePageState extends State<EmployeesDatabasePage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text('Employee name'),
-          TextField(
-            
-          ),
+          TextField(),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: Text('Title'),
           ),
           TextField(
-            
-            keyboardType: TextInputType.emailAddress,
-          ),
+              // keyboardType: TextInputType.emailAddress,
+              ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: Text('Email'),
           ),
           TextField(
-            
-            keyboardType: TextInputType.phone,
-          ),
+              // keyboardType: TextInputType.phone,
+              ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: Text('Phone'),
           ),
-          TextField(
-            
-          ),
+          TextField(),
         ],
       ),
       actions: <Widget>[

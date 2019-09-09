@@ -30,6 +30,7 @@ class _PolicyPageState extends State<PolicyPage> {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextField(
+                    style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
                       hintText: 'Policy statement',
                       hintStyle: TextStyle(
