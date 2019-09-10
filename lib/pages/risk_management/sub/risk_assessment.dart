@@ -1,13 +1,15 @@
 import 'package:flutter_web/material.dart';
+import 'package:iso/packages/smooth_star_rating/smooth_star_rating.dart';
 import 'package:iso/styles/all/all.dart';
 
-class EmployeesDatabasePage extends StatefulWidget {
-  _EmployeesDatabasePageState createState() => _EmployeesDatabasePageState();
+class RiskAssessmentPage extends StatefulWidget {
+  _RiskAssessmentPageState createState() => _RiskAssessmentPageState();
 }
 
-class _EmployeesDatabasePageState extends State<EmployeesDatabasePage> {
+class _RiskAssessmentPageState extends State<RiskAssessmentPage> {
   String _textSearch;
   bool _isCheck = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,7 +37,7 @@ class _EmployeesDatabasePageState extends State<EmployeesDatabasePage> {
             width: 4.0,
           ),
           Text(
-            'Employees Database',
+            'Risk Assessment',
             style: tsMainText,
           ),
           Expanded(
@@ -109,7 +111,7 @@ class _EmployeesDatabasePageState extends State<EmployeesDatabasePage> {
                 showDialog(
                   context: context,
                   builder: (BuildContext context) =>
-                      _buildUpdateDialog(context),
+                      UpdateDialog(),
                 );
               },
             ),
@@ -199,7 +201,7 @@ class _EmployeesDatabasePageState extends State<EmployeesDatabasePage> {
               ))),
               child: Center(
                   child: Text(
-                'Employee name',
+                'Risk Description',
                 style: textStyleColumnText,
               )),
             ),
@@ -214,7 +216,7 @@ class _EmployeesDatabasePageState extends State<EmployeesDatabasePage> {
               ))),
               child: Center(
                   child: Text(
-                'Title',
+                'Impact & Significance',
                 style: textStyleColumnText,
               )),
             ),
@@ -229,7 +231,7 @@ class _EmployeesDatabasePageState extends State<EmployeesDatabasePage> {
               ))),
               child: Center(
                   child: Text(
-                'Email',
+                'Likelihood',
                 style: textStyleColumnText,
               )),
             ),
@@ -244,7 +246,7 @@ class _EmployeesDatabasePageState extends State<EmployeesDatabasePage> {
               ))),
               child: Center(
                   child: Text(
-                'Experience',
+                'Consequence',
                 style: textStyleColumnText,
               )),
             ),
@@ -259,7 +261,97 @@ class _EmployeesDatabasePageState extends State<EmployeesDatabasePage> {
               ))),
               child: Center(
                   child: Text(
-                'Phone',
+                'Rate',
+                style: textStyleColumnText,
+              )),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                  border: Border(
+                      right: BorderSide(
+                color: Colors.black,
+                width: 2.0,
+              ))),
+              child: Center(
+                  child: Text(
+                'Risk Owner',
+                style: textStyleColumnText,
+              )),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                  border: Border(
+                      right: BorderSide(
+                color: Colors.black,
+                width: 2.0,
+              ))),
+              child: Center(
+                  child: Text(
+                'Mitigation Action',
+                style: textStyleColumnText,
+              )),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                  border: Border(
+                      right: BorderSide(
+                color: Colors.black,
+                width: 2.0,
+              ))),
+              child: Center(
+                  child: Text(
+                'Responsibility',
+                style: textStyleColumnText,
+              )),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                  border: Border(
+                      right: BorderSide(
+                color: Colors.black,
+                width: 2.0,
+              ))),
+              child: Center(
+                  child: Text(
+                'Date',
+                style: textStyleColumnText,
+              )),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                  border: Border(
+                      right: BorderSide(
+                color: Colors.black,
+                width: 2.0,
+              ))),
+              child: Center(
+                  child: Text(
+                'Required Resources',
+                style: textStyleColumnText,
+              )),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                  border: Border(
+                      right: BorderSide(
+                color: Colors.black,
+                width: 2.0,
+              ))),
+              child: Center(
+                  child: Text(
+                'Status',
                 style: textStyleColumnText,
               )),
             ),
@@ -283,62 +375,6 @@ class _EmployeesDatabasePageState extends State<EmployeesDatabasePage> {
   Container bodyTable() {
     return Container(
       height: 500.0,
-    );
-  }
-
-  //add or update item
-  Widget _buildUpdateDialog(BuildContext context) {
-    return AlertDialog(
-      title: const Text('Add new item'),
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text('Employee name'),
-          TextField(),
-          Padding(
-            padding: const EdgeInsets.only(top: 8.0),
-            child: Text('Title'),
-          ),
-          TextField(
-              keyboardType: TextInputType.emailAddress,
-              ),
-          Padding(
-            padding: const EdgeInsets.only(top: 8.0),
-            child: Text('Email'),
-          ),
-          TextField(
-              keyboardType: TextInputType.phone,
-              ),
-          Padding(
-            padding: const EdgeInsets.only(top: 8.0),
-            child: Text('Phone'),
-          ),
-          TextField(),
-        ],
-      ),
-      actions: <Widget>[
-        FlatButton(
-          highlightColor: colorFlatHighLightPositive,
-          hoverColor: colorFlatHoverPositive,
-          onPressed: () {
-            Navigator.of(context).pop();
-            setState(() {});
-          },
-          textColor: colorPositiveText,
-          child: const Text('save'),
-        ),
-        FlatButton(
-          highlightColor: colorFlatHighLightNegative,
-          hoverColor: colorFlatHoverNegative,
-          onPressed: () {
-            Navigator.of(context).pop();
-            setState(() {});
-          },
-          textColor: colorNegativeText,
-          child: const Text('cancel'),
-        ),
-      ],
     );
   }
 
@@ -370,6 +406,142 @@ class _EmployeesDatabasePageState extends State<EmployeesDatabasePage> {
             setState(() {});
           },
           textColor: colorPositiveText,
+          child: const Text('cancel'),
+        ),
+      ],
+    );
+  }
+}
+
+//add or update item
+class UpdateDialog extends StatefulWidget {
+  UpdateDialog({Key key}) : super(key: key);
+
+  _UpdateDialogState createState() => _UpdateDialogState();
+}
+
+class _UpdateDialogState extends State<UpdateDialog> {
+  double rate0 = 0, rate1 = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: const Text('Add new item'),
+      content: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text('Risk Description'),
+            TextField(),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Text('Impact & Significance'),
+            ),
+            TextField(),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Text('Likelihood'),
+            ),
+            SmoothStarRating(
+              starCount: 5,
+              rating: rate0,
+              size: 40.0,
+              color: Colors.yellow,
+              borderColor: Colors.yellow,
+              spacing: 0.0,
+              allowHalfRating: false,
+              onRatingChanged: (double v) {
+                rate0 = v;
+                setState(() {});
+                print('before $rate0');
+              },
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Text('Consequence'),
+            ),
+            SmoothStarRating(
+              allowHalfRating: false,
+              starCount: 5,
+              rating: rate1,
+              size: 40.0,
+              color: Colors.yellow,
+              borderColor: Colors.yellow,
+              spacing: 0.0,
+              onRatingChanged: (double v) {
+                rate1 = v;
+                setState(() {});
+              },
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Text('Rate'),
+            ),
+            TextField(
+              enabled: false,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Text('Risk Owner'),
+            ),
+            TextField(),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Text('Mitigation Action'),
+            ),
+            TextField(),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Text('Responsibility'),
+            ),
+            TextField(),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Text('Date'),
+            ),
+            TextField(
+              onTap: () {
+                var x = showDatePicker(
+                  context: context,
+                  firstDate: DateTime(1980),
+                  initialDate: DateTime.now(),
+                  lastDate: DateTime(2050),
+                );
+              },
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Text('Required Resources'),
+            ),
+            TextField(),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Text('Status'),
+            ),
+            TextField(),
+          ],
+        ),
+      ),
+      actions: <Widget>[
+        FlatButton(
+          highlightColor: colorFlatHighLightPositive,
+          hoverColor: colorFlatHoverPositive,
+          onPressed: () {
+            Navigator.of(context).pop();
+            setState(() {});
+          },
+          textColor: colorPositiveText,
+          child: const Text('save'),
+        ),
+        FlatButton(
+          highlightColor: colorFlatHighLightNegative,
+          hoverColor: colorFlatHoverNegative,
+          onPressed: () {
+            Navigator.of(context).pop();
+            setState(() {});
+          },
+          textColor: colorNegativeText,
           child: const Text('cancel'),
         ),
       ],

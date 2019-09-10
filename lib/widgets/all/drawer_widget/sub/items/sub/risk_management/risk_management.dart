@@ -2,15 +2,15 @@ import 'package:flutter_web/material.dart';
 import 'package:iso/models/page_model.dart';
 import 'package:iso/packages/font_size/auto_size_text.dart';
 import 'package:iso/packages/provider/src/provider.dart';
+import 'package:iso/styles/drawer_widget/items/style_item.dart';
+import 'package:iso/widgets/all/view_page.dart';
 
 class RiskManagment extends StatefulWidget {
-
   _RiskManagmentState createState() => _RiskManagmentState();
 }
 
 class _RiskManagmentState extends State<RiskManagment> {
- bool show = false;
-  Color color = Colors.white;
+  bool show = false, isHover0 = false, isHover1 = false, isHover2 = false;
   @override
   Widget build(BuildContext context) {
     final page = Provider.of<PageModel>(context);
@@ -65,12 +65,16 @@ class _RiskManagmentState extends State<RiskManagment> {
                   padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
                   child: Text(
                     'Dashboard',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: isHoverItem(isHover0)),
                     textAlign: TextAlign.left,
                   ),
                 ),
-                onTap: () {
+                onHover: (bool isHover) {
+                  isHover0 = isHover;
                   setState(() {});
+                },
+                onTap: () {
+                  page.setViewPage(ViewPage(6, 0));
                 },
               ),
               //Risk Team
@@ -79,20 +83,16 @@ class _RiskManagmentState extends State<RiskManagment> {
                   padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
                   child: Text(
                     'Risk Team',
-                    style: TextStyle(color: color),
+                    style: TextStyle(color: isHoverItem(isHover1)),
                     textAlign: TextAlign.left,
                   ),
                 ),
-                onHover: (bool onHover) {
-                  if (onHover) {
-                    color = Colors.blueAccent;
-                  } else {
-                    color = Colors.white;
-                  }
+                onHover: (bool isHover) {
+                  isHover1 = isHover;
                   setState(() {});
                 },
                 onTap: () {
-                 // page.setViewPage(ViewPage(1, 0));
+                  page.setViewPage(ViewPage(6, 1));
                 },
               ),
               //Risk Assessment
@@ -101,20 +101,16 @@ class _RiskManagmentState extends State<RiskManagment> {
                   padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
                   child: Text(
                     'Risk Assessment',
-                    style: TextStyle(color: color),
+                    style: TextStyle(color: isHoverItem(isHover2)),
                     textAlign: TextAlign.left,
                   ),
                 ),
-                onHover: (bool onHover) {
-                  if (onHover) {
-                    color = Colors.blueAccent;
-                  } else {
-                    color = Colors.white;
-                  }
+                onHover: (bool isHover) {
+                  isHover2 = isHover;
                   setState(() {});
                 },
                 onTap: () {
-                 // page.setViewPage(ViewPage(1, 0));
+                  page.setViewPage(ViewPage(6, 2));
                 },
               ),
             ],

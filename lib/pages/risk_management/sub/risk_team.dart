@@ -1,11 +1,11 @@
 import 'package:flutter_web/material.dart';
 import 'package:iso/styles/all/all.dart';
 
-class EmployeesDatabasePage extends StatefulWidget {
-  _EmployeesDatabasePageState createState() => _EmployeesDatabasePageState();
+class RiskTeamPage extends StatefulWidget {
+  _RiskTeamPageState createState() => _RiskTeamPageState();
 }
 
-class _EmployeesDatabasePageState extends State<EmployeesDatabasePage> {
+class _RiskTeamPageState extends State<RiskTeamPage> {
   String _textSearch;
   bool _isCheck = false;
   @override
@@ -35,7 +35,7 @@ class _EmployeesDatabasePageState extends State<EmployeesDatabasePage> {
             width: 4.0,
           ),
           Text(
-            'Employees Database',
+            'Risk Team',
             style: tsMainText,
           ),
           Expanded(
@@ -199,7 +199,7 @@ class _EmployeesDatabasePageState extends State<EmployeesDatabasePage> {
               ))),
               child: Center(
                   child: Text(
-                'Employee name',
+                'Name',
                 style: textStyleColumnText,
               )),
             ),
@@ -215,51 +215,6 @@ class _EmployeesDatabasePageState extends State<EmployeesDatabasePage> {
               child: Center(
                   child: Text(
                 'Title',
-                style: textStyleColumnText,
-              )),
-            ),
-          ),
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                  border: Border(
-                      right: BorderSide(
-                color: Colors.black,
-                width: 2.0,
-              ))),
-              child: Center(
-                  child: Text(
-                'Email',
-                style: textStyleColumnText,
-              )),
-            ),
-          ),
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                  border: Border(
-                      right: BorderSide(
-                color: Colors.black,
-                width: 2.0,
-              ))),
-              child: Center(
-                  child: Text(
-                'Experience',
-                style: textStyleColumnText,
-              )),
-            ),
-          ),
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                  border: Border(
-                      right: BorderSide(
-                color: Colors.black,
-                width: 2.0,
-              ))),
-              child: Center(
-                  child: Text(
-                'Phone',
                 style: textStyleColumnText,
               )),
             ),
@@ -294,25 +249,11 @@ class _EmployeesDatabasePageState extends State<EmployeesDatabasePage> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text('Employee name'),
+          Text('Name'),
           TextField(),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: Text('Title'),
-          ),
-          TextField(
-              keyboardType: TextInputType.emailAddress,
-              ),
-          Padding(
-            padding: const EdgeInsets.only(top: 8.0),
-            child: Text('Email'),
-          ),
-          TextField(
-              keyboardType: TextInputType.phone,
-              ),
-          Padding(
-            padding: const EdgeInsets.only(top: 8.0),
-            child: Text('Phone'),
           ),
           TextField(),
         ],

@@ -1,7 +1,9 @@
 import 'package:flutter_web/material.dart';
+import 'package:iso/pages/access/access.dart';
 import 'package:iso/pages/context/context.dart';
 import 'package:iso/pages/hr/hr.dart';
 import 'package:iso/pages/policy/policy.dart';
+import 'package:iso/pages/risk_management/risk_management.dart';
 import 'package:iso/pages/scope/scope.dart';
 import 'package:iso/pages/documented_infomation/documented_infomation.dart';
 
@@ -22,6 +24,8 @@ class _ViewPageState extends State<ViewPage> {
         Context(widget.child),
         DocumentedInformation(widget.child),
         HR(widget.child),
+        Access(widget.child),
+        RiskManagement(widget.child),
       ],
     );
   }

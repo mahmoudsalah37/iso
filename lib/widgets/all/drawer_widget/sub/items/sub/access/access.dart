@@ -2,14 +2,14 @@ import 'package:flutter_web/material.dart';
 import 'package:iso/models/page_model.dart';
 import 'package:iso/packages/font_size/auto_size_text.dart';
 import 'package:iso/packages/provider/src/provider.dart';
+import 'package:iso/widgets/all/view_page.dart';
 
 class Access extends StatefulWidget {
-
   _AccessState createState() => _AccessState();
 }
 
 class _AccessState extends State<Access> {
- bool show = false;
+  bool show = false;
   Color color = Colors.white;
   @override
   Widget build(BuildContext context) {
@@ -78,10 +78,9 @@ class _AccessState extends State<Access> {
                   setState(() {});
                 },
                 onTap: () {
-                 // page.setViewPage(ViewPage(1, 0));
+                  page.setViewPage(ViewPage(5, 0));
                 },
               ),
-              
             ],
           ),
         ),

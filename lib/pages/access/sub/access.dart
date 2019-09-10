@@ -1,11 +1,11 @@
 import 'package:flutter_web/material.dart';
 import 'package:iso/styles/all/all.dart';
 
-class EmployeesDatabasePage extends StatefulWidget {
-  _EmployeesDatabasePageState createState() => _EmployeesDatabasePageState();
+class AccessPage extends StatefulWidget {
+  _AccessPageState createState() => _AccessPageState();
 }
 
-class _EmployeesDatabasePageState extends State<EmployeesDatabasePage> {
+class _AccessPageState extends State<AccessPage> {
   String _textSearch;
   bool _isCheck = false;
   @override
@@ -35,7 +35,7 @@ class _EmployeesDatabasePageState extends State<EmployeesDatabasePage> {
             width: 4.0,
           ),
           Text(
-            'Employees Database',
+            'Access',
             style: tsMainText,
           ),
           Expanded(
@@ -199,7 +199,7 @@ class _EmployeesDatabasePageState extends State<EmployeesDatabasePage> {
               ))),
               child: Center(
                   child: Text(
-                'Employee name',
+                'Module',
                 style: textStyleColumnText,
               )),
             ),
@@ -214,7 +214,7 @@ class _EmployeesDatabasePageState extends State<EmployeesDatabasePage> {
               ))),
               child: Center(
                   child: Text(
-                'Title',
+                'Access to read only',
                 style: textStyleColumnText,
               )),
             ),
@@ -229,37 +229,7 @@ class _EmployeesDatabasePageState extends State<EmployeesDatabasePage> {
               ))),
               child: Center(
                   child: Text(
-                'Email',
-                style: textStyleColumnText,
-              )),
-            ),
-          ),
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                  border: Border(
-                      right: BorderSide(
-                color: Colors.black,
-                width: 2.0,
-              ))),
-              child: Center(
-                  child: Text(
-                'Experience',
-                style: textStyleColumnText,
-              )),
-            ),
-          ),
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                  border: Border(
-                      right: BorderSide(
-                color: Colors.black,
-                width: 2.0,
-              ))),
-              child: Center(
-                  child: Text(
-                'Phone',
+                'Access to edit and read',
                 style: textStyleColumnText,
               )),
             ),
@@ -294,25 +264,16 @@ class _EmployeesDatabasePageState extends State<EmployeesDatabasePage> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text('Employee name'),
+          Text('Module'),
           TextField(),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
-            child: Text('Title'),
+            child: Text('Access to read only'),
           ),
-          TextField(
-              keyboardType: TextInputType.emailAddress,
-              ),
+          TextField(),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
-            child: Text('Email'),
-          ),
-          TextField(
-              keyboardType: TextInputType.phone,
-              ),
-          Padding(
-            padding: const EdgeInsets.only(top: 8.0),
-            child: Text('Phone'),
+            child: Text('Access to edit and read'),
           ),
           TextField(),
         ],
