@@ -1,13 +1,11 @@
 import 'package:flutter_web/material.dart';
 import 'package:iso/styles/all/all.dart';
 
-class UnderstandingOfOrganizationContextPage extends StatefulWidget {
-  _UnderstandingOfOrganizationContextPageState createState() =>
-      _UnderstandingOfOrganizationContextPageState();
+class ObjectivesPage extends StatefulWidget {
+  _ObjectivesPageState createState() => _ObjectivesPageState();
 }
 
-class _UnderstandingOfOrganizationContextPageState
-    extends State<UnderstandingOfOrganizationContextPage> {
+class _ObjectivesPageState extends State<ObjectivesPage> {
   String _textSearch;
   bool _isCheck = false;
   @override
@@ -20,7 +18,7 @@ class _UnderstandingOfOrganizationContextPageState
           //Head
           headPage(context),
           //Body
-          bodyPage(),
+          bodyPage()
         ],
       ),
     );
@@ -37,7 +35,7 @@ class _UnderstandingOfOrganizationContextPageState
             width: 4.0,
           ),
           Text(
-            'Understanding Of Organization Context',
+            'Objectives',
             style: tsMainText,
           ),
           Expanded(
@@ -111,7 +109,7 @@ class _UnderstandingOfOrganizationContextPageState
                 showDialog(
                   context: context,
                   builder: (BuildContext context) =>
-                      _buildUpdateDialog(context),
+                      _buildUpdateDialog(context, 'Add new item'),
                 );
               },
             ),
@@ -201,7 +199,7 @@ class _UnderstandingOfOrganizationContextPageState
               ))),
               child: Center(
                   child: Text(
-                'Context',
+                'Date',
                 style: textStyleColumnText,
               )),
             ),
@@ -216,7 +214,7 @@ class _UnderstandingOfOrganizationContextPageState
               ))),
               child: Center(
                   child: Text(
-                'classification issue',
+                'Department',
                 style: textStyleColumnText,
               )),
             ),
@@ -231,7 +229,82 @@ class _UnderstandingOfOrganizationContextPageState
               ))),
               child: Center(
                   child: Text(
-                'Comment',
+                'Objective',
+                style: textStyleColumnText,
+              )),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                  border: Border(
+                      right: BorderSide(
+                color: Colors.black,
+                width: 2.0,
+              ))),
+              child: Center(
+                  child: Text(
+                'required Resources',
+                style: textStyleColumnText,
+              )),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                  border: Border(
+                      right: BorderSide(
+                color: Colors.black,
+                width: 2.0,
+              ))),
+              child: Center(
+                  child: Text(
+                'Required actions',
+                style: textStyleColumnText,
+              )),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                  border: Border(
+                      right: BorderSide(
+                color: Colors.black,
+                width: 2.0,
+              ))),
+              child: Center(
+                  child: Text(
+                'Responsibility',
+                style: textStyleColumnText,
+              )),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                  border: Border(
+                      right: BorderSide(
+                color: Colors.black,
+                width: 2.0,
+              ))),
+              child: Center(
+                  child: Text(
+                'Target date',
+                style: textStyleColumnText,
+              )),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                  border: Border(
+                      right: BorderSide(
+                color: Colors.black,
+                width: 2.0,
+              ))),
+              child: Center(
+                  child: Text(
+                'Status',
                 style: textStyleColumnText,
               )),
             ),
@@ -255,160 +328,74 @@ class _UnderstandingOfOrganizationContextPageState
   Container bodyTable() {
     return Container(
       height: 500.0,
-      //rows
-      child: ListView(
-        children: <Widget>[
-          Container(
-            height: 40.0,
-            decoration: BoxDecoration(
-              border: Border(
-                left: BorderSide(
-                  color: Colors.grey,
-                  width: 1.0,
-                ),
-                bottom: BorderSide(
-                  color: Colors.grey,
-                  width: 1.0,
-                ),
-              ),
-            ),
-            child: Row(
-              children: <Widget>[
-                Checkbox(
-                  value: true,
-                  activeColor: colorCheckBox,
-                  onChanged: (bool isCheck) {},
-                ),
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                        border: Border(
-                            right: BorderSide(
-                      color: Colors.grey,
-                      width: 1.0,
-                    ))),
-                    child: Center(
-                        child: Text(
-                      '1',
-                    )),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                        border: Border(
-                            right: BorderSide(
-                      color: Colors.grey,
-                      width: 1.0,
-                    ))),
-                    child: Center(
-                        child: Text(
-                      'ahmed',
-                    )),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      border: Border(
-                        right: BorderSide(
-                          color: Colors.grey,
-                          width: 1.0,
-                        ),
-                      ),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Egypt',
-                      ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      border: Border(
-                        right: BorderSide(
-                          color: Colors.grey,
-                          width: 1.0,
-                        ),
-                      ),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Egypt',
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: InkWell(
-                    child: SizedBox(
-                      height: 20.0,
-                      width: 20.0, // fixed width and height
-                      child: Image.asset('icons/edit.png'),
-                    ),
-                    onTap: () {
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) =>
-                            _buildUpdateDialog(context),
-                      );
-                    },
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
     );
   }
 
   //add or update item
-  Widget _buildUpdateDialog(BuildContext context) {
-    TextEditingController _contextControl = TextEditingController();
-    List<DropdownMenuItem<String>> _classifications =  <String>['Internal Issue', 'External issue']
-                .map((String value) {
-              return DropdownMenuItem<String>(
-                value: value,
-                child: Text(value),
-              );
-            }).toList();
-    TextEditingController _commentControl = TextEditingController();
-
+  Widget _buildUpdateDialog(BuildContext context, String title) {
     return AlertDialog(
-      title: const Text('Add new item'),
+      title: Text(title),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text('Context'),
+          Text('Date'),
           TextField(
-            controller: _contextControl,
-            
+            onTap: () {
+              var x = showDatePicker(
+                context: context,
+                firstDate: DateTime(1950),
+                initialDate: DateTime.now(),
+                lastDate: DateTime(2050),
+              );
+            },
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
-            child: Text('classification issue'),
+            child: Text('Department'),
           ),
-          DropdownButton(
-            value: _classifications[0].value,
-            items:_classifications,
-            onChanged: (String x) {},
+          TextField(),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text('Objective'),
+          ),
+          TextField(),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text('required Resources'),
+          ),
+          TextField(),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text('Required actions'),
+          ),
+          TextField(),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text('Responsibility'),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
-            child: Text('comment'),
+            child: Text('Target date'),
           ),
-          TextField(
-            controller: _commentControl,
-            
+          TextField(),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Text('Status'),
+          ),
+          DropdownButton<String>(
+            items:
+                <String>['completed', 'ongoing', 'pending'].map((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(value),
+              );
+            }).toList(),
+            onChanged: (_) {},
           ),
         ],
       ),
-    actions: <Widget>[
+      actions: <Widget>[
         FlatButton(
           highlightColor: colorFlatHighLightPositive,
           hoverColor: colorFlatHoverPositive,

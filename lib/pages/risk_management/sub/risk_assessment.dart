@@ -110,8 +110,7 @@ class _RiskAssessmentPageState extends State<RiskAssessmentPage> {
               onTap: () {
                 showDialog(
                   context: context,
-                  builder: (BuildContext context) =>
-                      UpdateDialog(),
+                  builder: (BuildContext context) => UpdateDialog(),
                 );
               },
             ),
@@ -519,7 +518,16 @@ class _UpdateDialogState extends State<UpdateDialog> {
               padding: const EdgeInsets.only(top: 8.0),
               child: Text('Status'),
             ),
-            TextField(),
+            DropdownButton<String>(
+              items: <String>['completed', 'ongoing', 'pending']
+                  .map((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+              onChanged: (_) {},
+            ),
           ],
         ),
       ),
