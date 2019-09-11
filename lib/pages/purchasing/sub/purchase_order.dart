@@ -315,16 +315,7 @@ class _PurchaseOrderPageState extends State<PurchaseOrderPage> {
             padding: const EdgeInsets.only(top: 8.0),
             child: Text('Service/product'),
           ),
-          TextField(
-            onTap: () {
-              var x = showDatePicker(
-                context: context,
-                firstDate: DateTime(1950),
-                initialDate: DateTime.now(),
-                lastDate: DateTime(2050),
-              );
-            },
-          ),
+          TextField(),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: Text('Contact person'),
@@ -334,12 +325,16 @@ class _PurchaseOrderPageState extends State<PurchaseOrderPage> {
             padding: const EdgeInsets.only(top: 8.0),
             child: Text('Email address'),
           ),
-          TextField(),
+          TextField(
+            keyboardType: TextInputType.emailAddress,
+          ),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: Text('Tel'),
           ),
-          TextField(),
+          TextField(
+            keyboardType: TextInputType.phone,
+          ),
         ],
       ),
       actions: <Widget>[

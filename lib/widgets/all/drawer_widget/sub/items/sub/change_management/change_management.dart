@@ -2,13 +2,16 @@ import 'package:flutter_web/material.dart';
 import 'package:iso/models/page_model.dart';
 import 'package:iso/packages/font_size/auto_size_text.dart';
 import 'package:iso/packages/provider/src/provider.dart';
+import 'package:iso/styles/drawer_widget/items/style_item.dart';
+
+import '../../../../../view_page.dart';
 
 class ChangeManagement extends StatefulWidget {
   _ChangeManagementState createState() => _ChangeManagementState();
 }
 
 class _ChangeManagementState extends State<ChangeManagement> {
-  bool show = false;
+  bool show = false, isHover0 = false;
   Color color = Colors.white;
   @override
   Widget build(BuildContext context) {
@@ -59,39 +62,35 @@ class _ChangeManagementState extends State<ChangeManagement> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               //Dashboard
-              InkWell(
-                child: Padding(
-                  padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
-                  child: Text(
-                    'Dashboard',
-                    style: TextStyle(color: Colors.white),
-                    textAlign: TextAlign.left,
-                  ),
-                ),
-                onTap: () {
-                  setState(() {});
-                },
-              ),
+              // InkWell(
+              //   child: Padding(
+              //     padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
+              //     child: Text(
+              //       'Dashboard',
+              //       style: TextStyle(color: Colors.white),
+              //       textAlign: TextAlign.left,
+              //     ),
+              //   ),
+              //   onTap: () {
+              //     setState(() {});
+              //   },
+              // ),
               //ChangeManagement
               InkWell(
                 child: Padding(
                   padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
                   child: Text(
                     'ChangeManagement',
-                    style: TextStyle(color: color),
+                    style: TextStyle(color: isHoverItem(isHover0)),
                     textAlign: TextAlign.left,
                   ),
                 ),
                 onHover: (bool onHover) {
-                  if (onHover) {
-                    color = Colors.blueAccent;
-                  } else {
-                    color = Colors.white;
-                  }
+                  isHover0 = onHover;
                   setState(() {});
                 },
                 onTap: () {
-                  // page.setViewPage(ViewPage(1, 0));
+                  page.setViewPage(ViewPage(7, 0));
                 },
               ),
             ],
