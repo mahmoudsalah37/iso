@@ -531,8 +531,9 @@ class _RatingBarState extends State<RatingBar> {
           }
         },
         onHorizontalDragUpdate: (dragUpdates) {
-          if (widget.direction == Axis.horizontal)
+          if (widget.direction == Axis.horizontal) {
             _dragOperation(dragUpdates, widget.direction);
+          }
         },
         onVerticalDragStart: (_) {
           if (widget.direction == Axis.vertical) _glow.value = true;
@@ -545,8 +546,9 @@ class _RatingBarState extends State<RatingBar> {
           }
         },
         onVerticalDragUpdate: (dragUpdates) {
-          if (widget.direction == Axis.vertical)
+          if (widget.direction == Axis.vertical) {
             _dragOperation(dragUpdates, widget.direction);
+          }
         },
         child: Padding(
           padding: widget.itemPadding,

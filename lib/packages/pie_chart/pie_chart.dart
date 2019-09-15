@@ -195,8 +195,9 @@ class _PieChartState extends State<PieChart>
     if (index > (colorList.length - 1)) {
       var Index = index % (colorList.length - 1);
       return colorList.elementAt(Index);
-    } else
+    } else {
       return colorList.elementAt(index);
+    }
   }
 
   @override
@@ -207,7 +208,7 @@ class _PieChartState extends State<PieChart>
 }
 
 class PieChartPainter extends CustomPainter {
-  List<Paint> paintList =  List();
+  List<Paint> paintList = List();
   List<double> subParts;
   double total = 0;
   double totalAngle = math.pi * 2;
@@ -248,7 +249,7 @@ class PieChartPainter extends CustomPainter {
     finalAngle = 0;
     for (int i = 0; i < subParts.length; i++) {
       canvas.drawArc(
-         Rect.fromLTWH(0.0, 0.0, size.width, size.height),
+        Rect.fromLTWH(0.0, 0.0, size.width, size.height),
         prevAngle,
         (((totalAngle) / total) * subParts[i]),
         true,
@@ -261,12 +262,13 @@ class PieChartPainter extends CustomPainter {
           math.sin(prevAngle + ((((totalAngle) / total) * subParts[i]) / 2));
       if (subParts.elementAt(i).toInt() != 0) {
         var name;
-        if (showValuesInPercentage)
+        if (showValuesInPercentage) {
           name = (((subParts.elementAt(i) / total) * 100)
                   .toStringAsFixed(this.decimalPlaces) +
               '%');
-        else
+        } else {
           name = subParts.elementAt(i).toStringAsFixed(this.decimalPlaces);
+        }
         drawName(canvas, name, x - 4, y, size);
       }
       prevAngle = prevAngle + (((totalAngle) / total) * subParts[i]);
@@ -277,29 +279,28 @@ class PieChartPainter extends CustomPainter {
     if (index > (colorList.length - 1)) {
       var Index = index % (colorList.length - 1);
       return colorList.elementAt(Index);
-    } else
+    } else {
       return colorList.elementAt(index);
+    }
   }
 
   void drawName(Canvas context, String name, double x, double y, Size size) {
-    TextSpan span =  TextSpan(
-        style:  TextStyle(
+    TextSpan span = TextSpan(
+        style: TextStyle(
             color: chartValuesColor,
             fontSize: 12.0,
             fontWeight: FontWeight.w700),
         text: name);
-    TextPainter tp =  TextPainter(
+    TextPainter tp = TextPainter(
         text: span,
         textAlign: TextAlign.left,
         textDirection: TextDirection.rtl);
     tp.layout();
-    tp.paint(
-        context,  Offset(size.width / 2 + x - 6, size.width / 2 + y - 6));
+    tp.paint(context, Offset(size.width / 2 + x - 6, size.width / 2 + y - 6));
   }
 
   @override
   bool shouldRepaint(PieChartPainter oldDelegate) {
-    // TODO: implement shouldRepaint
     return oldDelegate.totalAngle != totalAngle;
   }
 }

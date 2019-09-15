@@ -262,27 +262,28 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
   Widget _getMonthButton(
       final DateTime date, final ThemeData theme, final String locale) {
     VoidCallback callback;
-    if (_firstDate == null && _lastDate == null)
+    if (_firstDate == null && _lastDate == null) {
       callback =
           () => setState(() => selectedDate = DateTime(date.year, date.month));
-    else if (_firstDate != null &&
+    } else if (_firstDate != null &&
         _lastDate != null &&
         _firstDate.compareTo(date) <= 0 &&
-        _lastDate.compareTo(date) >= 0)
+        _lastDate.compareTo(date) >= 0) {
       callback =
           () => setState(() => selectedDate = DateTime(date.year, date.month));
-    else if (_firstDate != null &&
+    } else if (_firstDate != null &&
         _lastDate == null &&
-        _firstDate.compareTo(date) <= 0)
+        _firstDate.compareTo(date) <= 0) {
       callback =
           () => setState(() => selectedDate = DateTime(date.year, date.month));
-    else if (_firstDate == null &&
+    } else if (_firstDate == null &&
         _lastDate != null &&
-        _lastDate.compareTo(date) >= 0)
+        _lastDate.compareTo(date) >= 0) {
       callback =
           () => setState(() => selectedDate = DateTime(date.year, date.month));
-    else
+    } else {
       callback = null;
+    }
     return FlatButton(
       onPressed: callback,
       color: date.month == selectedDate.month && date.year == selectedDate.year

@@ -70,6 +70,7 @@ class _PurchaseState extends State<Purchase> {
                 ),
                 onHover: (bool onHover) {
                   isHover0 = onHover;
+                  setState(() {});
                 },
                 onTap: () {
                   page.setViewPage(ViewPage(10, 0));
@@ -87,6 +88,7 @@ class _PurchaseState extends State<Purchase> {
                 ),
                 onHover: (bool onHover) {
                   isHover1 = onHover;
+                  setState(() {});
                 },
                 onTap: () {
                   page.setViewPage(ViewPage(10, 1));
@@ -104,6 +106,7 @@ class _PurchaseState extends State<Purchase> {
                 ),
                 onHover: (bool onHover) {
                   isHover2 = onHover;
+                  setState(() {});
                 },
                 onTap: () {
                   page.setViewPage(ViewPage(10, 2));
