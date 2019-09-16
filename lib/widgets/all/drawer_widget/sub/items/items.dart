@@ -1,7 +1,7 @@
+import 'sub/actions/actions.dart' as prefix0;
 import 'package:flutter_web/material.dart';
 import 'sub/scope/scope.dart';
 import 'sub/access/access.dart';
-import 'sub/actions/actions.dart';
 import 'sub/change_management/change_management.dart';
 import 'sub/customer_focus/customer_focus.dart';
 import 'sub/policy/policy.dart';
@@ -38,7 +38,7 @@ ListView items() {
       Property(),
       InternalAudit(),
       Meeting(),
-      Actions(),
+      prefix0.Actions(),
       Operations(),
       CustomerFocus(),
       SizedBox(height: 50.0)

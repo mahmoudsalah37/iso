@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter_web/material.dart';
 import 'package:iso/styles/all/all.dart';
 import 'package:iso/styles/pages/pages.dart';
@@ -631,16 +629,12 @@ class _DocumentInformationPageState extends State<DocumentInformationPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text('Document name'),
-            TextField(
-              
-            ),
+            TextField(),
             Padding(
               padding: const EdgeInsets.only(top: 8.0),
               child: Text('Document number'),
             ),
-            TextField(
-              
-            ),
+            TextField(),
             Padding(
               padding: const EdgeInsets.only(top: 8.0),
               child: Text('Document type'),
@@ -728,16 +722,12 @@ class _DocumentInformationPageState extends State<DocumentInformationPage> {
               padding: const EdgeInsets.only(top: 8.0),
               child: Text('prepared by'),
             ),
-            TextField(
-              
-            ),
+            TextField(),
             Padding(
               padding: const EdgeInsets.only(top: 8.0),
               child: Text('approved by'),
             ),
-            TextField(
-              
-            ),
+            TextField(),
             //Attachment
             Padding(
               padding: const EdgeInsets.only(top: 8.0),
@@ -755,24 +745,7 @@ class _DocumentInformationPageState extends State<DocumentInformationPage> {
                   padding: EdgeInsets.only(top: 12.0),
                   child: FlatButton(
                     child: Icon(Icons.file_upload),
-                    onPressed: () async {
-                      InputElement uploadInput = FileUploadInputElement();
-                      uploadInput.click();
-
-                      uploadInput.onChange.listen((e) {
-                        // read file content as dataURL
-                        final files = uploadInput.files;
-                        if (files.length == 1) {
-                          final file = files[0];
-                          final reader = FileReader();
-
-                          reader.onLoadEnd.listen((e) {
-                            //_handleResult(reader.result);
-                          });
-                          reader.readAsDataUrl(file);
-                        }
-                      });
-                    },
+                    onPressed: () async {},
                   ),
                 ),
               ],
@@ -780,7 +753,7 @@ class _DocumentInformationPageState extends State<DocumentInformationPage> {
           ],
         ),
       ),
-       actions: <Widget>[
+      actions: <Widget>[
         FlatButton(
           highlightColor: colorFlatHighLightPositive,
           hoverColor: colorFlatHoverPositive,

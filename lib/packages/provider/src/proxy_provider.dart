@@ -196,7 +196,7 @@ class NumericProxyProvider<T, T2, T3, T4, T5, T6, R>
   /// The widget that is below the current [Provider] widget in the
   /// tree.
   ///
-  /// {@macro flutter.widgets.child}
+  /// {@macro flutter_web.widgets.child}
   final Widget child;
 
   /// {@template provider.proxyprovider.builder}

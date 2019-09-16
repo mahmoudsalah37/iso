@@ -1,4 +1,6 @@
 import 'package:flutter_web/material.dart';
+import 'package:iso/controllers/all/controllers.dart';
+import 'package:iso/models/pages/policy/policy.dart';
 import 'package:iso/styles/all/all.dart';
 
 class PolicyPage extends StatefulWidget {
@@ -6,7 +8,7 @@ class PolicyPage extends StatefulWidget {
 }
 
 class _PolicyPageState extends State<PolicyPage> {
-  String _textPolicy;
+  String _textPolicy = '';
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -58,8 +60,11 @@ class _PolicyPageState extends State<PolicyPage> {
                 'Save',
                 style: TextStyle(color: Colors.blue),
               ),
-              onPressed: () {
-                setState(() {});
+              onPressed: () async {
+                print('-----------');
+                String j = await makeGetRequest();
+                print(j);
+                print('-----------');
               },
             ),
           )

@@ -1,5 +1,5 @@
 import 'package:flutter_web/material.dart';
-// import 'package:iso/packages/charts/flutter.dart' as charts;
+// import 'package:iso/packages/charts/flutter_web.dart' as charts;
 import 'package:iso/packages/pie_chart/pie_chart.dart';
 
 class DashboardPage extends StatefulWidget {

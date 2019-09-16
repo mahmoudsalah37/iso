@@ -1,15 +1,19 @@
 import 'package:flutter_web/material.dart';
+import 'package:iso/pages/Property_of_customers_and_external_providers/Property_of_customers_and_external_providers.dart';
 import 'package:iso/pages/access/access.dart';
 import 'package:iso/pages/change_management/change_management.dart';
 import 'package:iso/pages/communication/communication.dart';
 import 'package:iso/pages/context/context.dart';
 import 'package:iso/pages/hr/hr.dart';
+import 'package:iso/pages/internal_audit/internal_audit.dart';
+import 'package:iso/pages/meeting/meeting.dart';
 import 'package:iso/pages/objectives/objectives.dart';
 import 'package:iso/pages/policy/policy.dart';
 import 'package:iso/pages/purchasing/purchasing.dart';
 import 'package:iso/pages/risk_management/risk_management.dart';
 import 'package:iso/pages/scope/scope.dart';
 import 'package:iso/pages/documented_infomation/documented_infomation.dart';
+import 'package:iso/pages/actions/Actions.dart' as actions;
 
 class ViewPage extends StatefulWidget {
   final int page, child;
@@ -45,6 +49,14 @@ class _ViewPageState extends State<ViewPage> {
         Communication(widget.child),
         // 10 Purchasing
         Purchase(widget.child),
+        //11 Property Of Customers And External Providers
+        PropertyOfCustomersAndExternalProviders(widget.child),
+        //12 Internal Audit
+        InternalAudit(widget.child),
+        //13 Meeting
+        Meeting(widget.child),
+        //14 Actions
+        actions.Actions(widget.child),
       ],
     );
   }

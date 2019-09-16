@@ -1,11 +1,13 @@
 import 'package:flutter_web/material.dart';
 import 'package:iso/styles/all/all.dart';
 
-class PurchaseOrderPage extends StatefulWidget {
-  _PurchaseOrderPageState createState() => _PurchaseOrderPageState();
+class PropertyOfCustomersAndExternalProvidersPage extends StatefulWidget {
+  _PropertyOfCustomersAndExternalProvidersPageState createState() =>
+      _PropertyOfCustomersAndExternalProvidersPageState();
 }
 
-class _PurchaseOrderPageState extends State<PurchaseOrderPage> {
+class _PropertyOfCustomersAndExternalProvidersPageState
+    extends State<PropertyOfCustomersAndExternalProvidersPage> {
   String _textSearch;
   bool _isCheck = false;
   @override
@@ -35,7 +37,7 @@ class _PurchaseOrderPageState extends State<PurchaseOrderPage> {
             width: 4.0,
           ),
           Text(
-            'Purchase Order',
+            'Property of customers and external providers',
             style: tsMainText,
           ),
           Expanded(
@@ -199,7 +201,7 @@ class _PurchaseOrderPageState extends State<PurchaseOrderPage> {
               ))),
               child: Center(
                   child: Text(
-                'Purchase Order Number',
+                'Type of property',
                 style: textStyleColumnText,
               )),
             ),
@@ -214,7 +216,7 @@ class _PurchaseOrderPageState extends State<PurchaseOrderPage> {
               ))),
               child: Center(
                   child: Text(
-                'Date of purchase',
+                'owner name',
                 style: textStyleColumnText,
               )),
             ),
@@ -229,7 +231,7 @@ class _PurchaseOrderPageState extends State<PurchaseOrderPage> {
               ))),
               child: Center(
                   child: Text(
-                'Supplier',
+                'storage location',
                 style: textStyleColumnText,
               )),
             ),
@@ -244,7 +246,7 @@ class _PurchaseOrderPageState extends State<PurchaseOrderPage> {
               ))),
               child: Center(
                   child: Text(
-                'Expected Delivery Date',
+                'type of storage',
                 style: textStyleColumnText,
               )),
             ),
@@ -259,22 +261,7 @@ class _PurchaseOrderPageState extends State<PurchaseOrderPage> {
               ))),
               child: Center(
                   child: Text(
-                'Actual delivery date',
-                style: textStyleColumnText,
-              )),
-            ),
-          ),
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                  border: Border(
-                      right: BorderSide(
-                color: Colors.black,
-                width: 2.0,
-              ))),
-              child: Center(
-                  child: Text(
-                'Total PO price',
+                'Responsibility',
                 style: textStyleColumnText,
               )),
             ),
@@ -309,49 +296,26 @@ class _PurchaseOrderPageState extends State<PurchaseOrderPage> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text('Purchase Order Number'),
+          Text('Type of property'),
           TextField(),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
-            child: Text('Date of purchase'),
-          ),
-          TextField(),
-          Padding(
-            padding: const EdgeInsets.only(top: 8.0),
-            child: Text('Supplier'),
+            child: Text('owner name'),
           ),
           TextField(),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
-            child: Text('Expected Delivery Date'),
+            child: Text('storage location'),
           ),
-          TextField(
-            onTap: () {
-              var x = showDatePicker(
-                context: context,
-                firstDate: DateTime(1950),
-                initialDate: DateTime.now(),
-                lastDate: DateTime(2050),
-              );
-            },
-          ),
+          TextField(),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
-            child: Text('Actual delivery date'),
+            child: Text('type of storage'),
           ),
-          TextField(
-            onTap: () {
-              var x = showDatePicker(
-                context: context,
-                firstDate: DateTime(1950),
-                initialDate: DateTime.now(),
-                lastDate: DateTime(2050),
-              );
-            },
-          ),
+          TextField(),
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
-            child: Text('Total PO price'),
+            child: Text('Responsibility'),
           ),
           TextField(),
         ],

@@ -4,7 +4,7 @@ import 'package:iso/styles/all/all.dart';
 AppBar appBarWidget() {
   return AppBar(
     elevation: 0.0,
-    title: Text('SmartIso'),
+    title: Text('Smartiso'),
     backgroundColor: colorMain,
   );
 }

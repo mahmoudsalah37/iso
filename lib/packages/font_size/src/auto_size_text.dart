@@ -1,6 +1,6 @@
 part of auto_size_text;
 
-/// Flutter widget that automatically resizes text to fit perfectly within its bounds.
+/// flutter_web widget that automatically resizes text to fit perfectly within its bounds.
 ///
 /// All size constraints as well as maxLines are taken into account. If the text
 /// overflows anyway, you should check if the parent widget actually constraints

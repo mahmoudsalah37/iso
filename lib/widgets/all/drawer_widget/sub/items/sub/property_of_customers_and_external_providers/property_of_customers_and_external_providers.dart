@@ -2,15 +2,17 @@ import 'package:flutter_web/material.dart';
 import 'package:iso/models/page_model.dart';
 import 'package:iso/packages/font_size/auto_size_text.dart';
 import 'package:iso/packages/provider/src/provider.dart';
+import 'package:iso/styles/drawer_widget/items/style_item.dart';
+
+import '../../../../../view_page.dart';
 
 class Property extends StatefulWidget {
-
   _PropertyState createState() => _PropertyState();
 }
 
 class _PropertyState extends State<Property> {
- bool show = false;
-  Color color = Colors.white;
+  bool show = false;
+  bool isHover0 = false;
   @override
   Widget build(BuildContext context) {
     final page = Provider.of<PageModel>(context);
@@ -59,27 +61,22 @@ class _PropertyState extends State<Property> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-        
               //property of customers and external providers
               InkWell(
                 child: Padding(
                   padding: EdgeInsets.only(left: 35.0, bottom: 8.0),
                   child: Text(
                     'property of customers and external providers',
-                    style: TextStyle(color: color),
+                    style: TextStyle(color: isHoverItem(isHover0)),
                     textAlign: TextAlign.left,
                   ),
                 ),
                 onHover: (bool onHover) {
-                  if (onHover) {
-                    color = Colors.blueAccent;
-                  } else {
-                    color = Colors.white;
-                  }
+                  isHover0 = onHover;
                   setState(() {});
                 },
                 onTap: () {
-                 // page.setViewPage(ViewPage(1, 0));
+                  page.setViewPage(ViewPage(11, 0));
                 },
               ),
             ],

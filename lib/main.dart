@@ -2,7 +2,7 @@ import 'package:flutter_web/material.dart';
 import 'package:iso/models/page_model.dart';
 import 'package:iso/packages/provider/provider.dart';
 import 'package:iso/widgets/all/view_page.dart';
-import 'package:http/http.dart' as http;
+
 import 'views/home/home.dart';
 
 void main() => runApp(MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'SmartIso',
+      title: 'Smartiso',
       theme: ThemeData(),
       home: ChangeNotifierProvider<PageModel>(
         builder: (_) => PageModel(ViewPage(0, 0)),

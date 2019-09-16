@@ -68,7 +68,7 @@ class ListenableProvider<T extends Listenable> extends ValueDelegateWidget<T>
   /// The widget that is below the current [ListenableProvider] widget in the
   /// tree.
   ///
-  /// {@macro flutter.widgets.child}
+  /// {@macro flutter_web.widgets.child}
   final Widget child;
 
   @override
@@ -228,7 +228,7 @@ class _NumericProxyProvider<T, T2, T3, T4, T5, T6, R extends Listenable>
   /// The widget that is below the current [Provider] widget in the
   /// tree.
   ///
-  /// {@macro flutter.widgets.child}
+  /// {@macro flutter_web.widgets.child}
   final Widget child;
 
   /// {@macro provider.proxyprovider.builder}

@@ -129,7 +129,7 @@ import 'selector.dart' show Selector;
 ///
 /// This means that when [builder] is called again with  values, 
 /// instance of `BarWidget` will not be recreated.
-/// This let Flutter knows that it doesn't have to rebuild `BarWidget`.
+/// This let flutter_web knows that it doesn't have to rebuild `BarWidget`.
 /// Therefore in such configuration, only `FooWidget` will rebuild
 /// if `Foo` changes.
 ///

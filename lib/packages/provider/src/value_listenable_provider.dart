@@ -75,7 +75,7 @@ class ValueListenableProvider<T> extends ValueDelegateWidget<ValueListenable<T>>
   /// The widget that is below the current [ValueListenableProvider] widget in
   /// the tree.
   ///
-  /// {@macro flutter.widgets.child}
+  /// {@macro flutter_web.widgets.child}
   final Widget child;
 
   /// {@macro provider.updateshouldnotify}
